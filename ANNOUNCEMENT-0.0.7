@@ -1,0 +1,59 @@
+Greetings all,
+
+it's time for the next release of Gerber Viewer, aka gerbv, 
+the "aperture macros 'r' us"-release.
+
+This time I have finally added support for aperture macros.
+The aperture macros are converted to small programs in a
+very simple "assembler". This "program" is currently executed 
+everytime an aperture described with this macro is drawn. 
+Therefore the speed of (re)drawing pages with many aperture 
+macros can be slow. If you find the slowness tiresome then 
+complain. I have a couple of ideas on speed improvements, but 
+I have had correctness as main goal.
+
+I have written a short description of the assembler in 
+doc/aperturemacros.txt. There are some caveats though. 
+Explicit X and Y and exposure given in aperture macros 
+are currently ignored.
+
+The RS-274X specification is not always very clear about these 
+aperture macros. I have tried to verify them as well as I can 
+(using the hand hacked page in examle/am-test/am-test.gbx), but 
+it's not 'til it hits reallity it becomes most obviuous how it 
+really should be. 
+
+I do not guarantee any kind of correctness, even though I've
+done my best. If you find any problem, please report back to 
+me preferably with an example. There are some comments
+in the file src/draw.c about question marks I've had. So if
+you feel that you know anything about aperture macros, please
+look in the code and send some comments to me.
+
+Please note that the Scheme backend doesn't know anything
+about macros as of yet.
+
+Comments, patches and suggestions are, as always, very welcome.
+
+Homepage for gerbv is still http://gerbv.sourceforge.net/
+
+To download gerbv goto 
+	http://prdownloads.sourceforge.net/gerbv/
+and grab gerbv-0.0.7.tar.gz
+
+To install the program do
+1. gzip -dc gerbv-0.0.7.tar.gz | tar xf -
+2. cd gerbv-0.0.7
+3. ./configure
+4. make install
+
+Interesting configure options are:
+--help          : Lists all options
+--disable-batch : Disable compilation of Guile/Scheme backends
+--prefix=<dir>  : Install from dir <prefix>
+
+
+What's new in 0.0.7
+- Aperture macros!
+- Improved detection of drill- or gerber file.
+

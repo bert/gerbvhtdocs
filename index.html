@@ -46,7 +46,7 @@
 <li> <a href="http://prdownloads.sourceforge.net/gerbv/">Download the source</a>
 <li> <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/gerbv">
      Browse the CVS repository</a>
-<li> Info gathered on RS-274X <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/gerbv/gerbv/doc/sources.txt?rev=1.3&content-type=text/vnd.viewcvs-markup">here</a>.
+<li> Info gathered on RS-274X <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/gerbv/gerbv/doc/sources.txt?rev=1.4&content-type=text/vnd.viewcvs-markup">here</a>.
 </ul>
 
 <h3>Packaging</h3>
@@ -75,7 +75,7 @@ gerbv is basically known to compile on all system which the above
 mentioned libraries compile on, basically all flavors of *ix. It
 has been tested on:
 <ul>
-<li> Linux (2.2.18pre21)
+<li> Linux (2.2/2.4)
 <li> NetBSD/i386 (1.4.1) (getopt_long not available)
 <li> NetBSD/Alpha (1.5.1)
 <li> Solaris (5.7 and 5.8) (getopt_long not available)
@@ -88,12 +88,16 @@ License (GPL) version 2.0.  See the toplevel COPYING file for
 more information. <p>
 
 Programs and associated files are:<br>
-Copyright &copy; 2001 by Stefan Petersen and the respective
+Copyright &copy; 2001, 2002 by Stefan Petersen and the respective
 original authors (which are listed in respective files).
 
 
 <h3>News</h3>
 <ul>
+<li> 2002-02-10 : 0.0.7 release availble 
+     <a href="http://prdownloads.sourceforge.net/gerbv/gerbv-0.0.7.tar.gz">here</a>.
+     Announcement is readable <a href="ANNOUNCEMENT-0.0.7">here</a>.
+
 <li> 2001-12-15 : 0.0.6 release availble 
      <a href="http://prdownloads.sourceforge.net/gerbv/gerbv-0.0.6.tar.gz">here</a>.
      Announcement is readable <a href="ANNOUNCEMENT-0.0.6">here</a>.
@@ -139,8 +143,7 @@ original authors (which are listed in respective files).
 
 <h4>What's there:</h4>
 <ul>
-<li> Parses a lot of Gerbers. Considered usable with the excepetion for the
-  aperture macros.
+<li> Parses a lot of Gerbers, including aperture macros.
 <li> Drill file support(NC drill/Excellon).
 <li> Autodetection of Gerber-or-Excellonfile.
 <li> Panning  and zooming.
@@ -154,7 +157,6 @@ original authors (which are listed in respective files).
 
 <h4>What is missing:</h4>
 <ul>
-<li> Aperture macros (red dots shows where they should be).
 <li> Explicit setting of color on layer.
 <li> Gerbers definition of layers are ignored.
 <li> Proper documentation on how to interface the backend.
