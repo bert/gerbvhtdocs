@@ -48,7 +48,7 @@ width="48" height="48" border="0" alt="gerbv Logo"> </A>
 <li> Read the <a href="gerbv-man.html">man page</a> for the current release
 </ul>
 
-<h3>Packaging</h3>
+<h3>Packaging and porting</h3>
 <ul>
 <li> Debian package. Available in both 
 <a href="http://packages.debian.org/stable/electronics/gerbv.html">stable</a>,
@@ -61,7 +61,11 @@ width="48" height="48" border="0" alt="gerbv Logo"> </A>
 <li> FreeBSD, in their <a href="http://www.freebsd.org/ports/cad.html">cad ports tree</a>.</li>
 <li> An <a href="gentoo/gerbv-0.13.ebuild">ebuild script</a> from Michael 
 Ihde for <a href="http://www.gentoo.org/">Gentoo Linux</a>. 
-
+<li>Charles Lepple has compiled the <a href="http://geda.seul.org/">gEDA 
+suite</a> to MacOS X using <a href="http://fink.sourceforge.net/">fink</a>.
+<a href="http://www.ghz.cc/charles/fink/#gerbv">Here</a> is how he did it.
+<li>Peter Ljungberg reports that he has managed to compile gerbv, including
+the "save to PNG" option, to VMS.
 </ul>
 
 
@@ -338,6 +342,7 @@ original authors (which are listed in respective files).
 
 
 <h3>Submitting a patch or addition to gerbv</h3>
+<ul>
 We are interested in all ideas and suggestions regarding gerbv. We also 
 reserve us the right to reject them though. Ideas implemented in source
 code always has a greater chance to make it into the release in a near 
@@ -352,11 +357,12 @@ variables.
 If you send in a patch <tt>diff</tt> is a very good tool. Before you
 start hacking, make a copy of the original file:<br>
 <tt>cp &lt;file&gt; &lt;file.orig&gt;</tt> for example like 
-<tt>cp &lt;gerbv.c&gt; &lt;gerbv.c.orig&gt;</tt>.<br>
+<tt>cp gerbv.c gerbv.c.orig</tt>.<br>
 
 Then use diff as:<br>
 <tt>diff -Naur &lt;file.orig&gt; &lt;file&gt; &gt; &lt;file.diff&gt;</tt><br>
 and send us the diff file.
+</ul>
 
 <h3>gEDA and gerbv Internet resources</h3>
 <ul>
