@@ -1,0 +1,45 @@
+--- gerber.c.orig	Wed Nov 21 13:10:19 2001
++++ gerber.c	Wed Nov 21 13:14:12 2001
+@@ -314,18 +314,22 @@
+     switch(a) {
+     case 1 : /* Exposure on */
+ 	state->aperture_state = ON;
++	state->changed = 1;
+ 	break;
+     case 2 : /* Exposure off */
+ 	state->aperture_state = OFF;
++	state->changed = 1;
+ 	break;
+     case 3 : /* Flash aperture */
+ 	state->aperture_state = FLASH;
++	state->changed = 1;
+ 	break;
+     default: /* Aperture in use */
+ 	if ((a >= APERTURE_MIN) && (a <= APERTURE_MAX)) 
+ 	    state->curr_aperture = a;
+ 	else
+ 	    err(1, "Aperture out of bounds:%d\n", a);
++	state->changed = 0;
+     }
+     
+     return;
+@@ -772,8 +776,18 @@
+     net->cirseg->angle1 = RAD2DEG(alfa);
+     net->cirseg->angle2 = RAD2DEG(beta);
+ 
++    /*
++     * Make sure it's always positive angles
++     */
++    
++    if (net->cirseg->angle1 < 0)
++	net->cirseg->angle1 = 360 + net->cirseg->angle1;
++    
++    if (net->cirseg->angle2 < 0)
++	net->cirseg->angle2 = 360 + net->cirseg->angle2;
++
+     if(net->cirseg->angle2 == 0)
+ 	net->cirseg->angle2 = 360;
+-
++    
+     return;
+ } /* calc_cirseg_mq */
