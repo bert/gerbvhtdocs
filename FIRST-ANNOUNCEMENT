@@ -1,0 +1,97 @@
+Greetings all,
+
+hereby I proudly present the latest addition to the suite of 
+free EDA tools: gerbv available at http://gerbv.sourceforge.net/
+
+As the name implies it's a viewer for Gerber files. The 
+graphical presentation is based on GTK+ and has the 
+possibility to run Guile Scheme as backend for generating 
+other file formats.
+
+This release is "release early, release often"-release. What
+is missing is listed below. The next week(s) work will involve
+making the build system complete and fix the sourceforge site
+to a usable state.
+
+The aim for the project is to make a free Gerber Viewer that
+is possible to run on as many platforms as possible. It has
+been tested on Linux, NetBSD and Solaris. Another goal is also
+the possiblity to run as much of the Gerber standard as possible.
+Some excepetions will probably be made with seldom used and hard
+to implement functions.
+
+
+What is missing:
+* Make target install not implemented
+* Backends must be situated in the same directory as executable
+* Multi quadrant arcs are not drawn (red lines will be drawn)
+* Aperture macros (red dots shows where should be)
+* Setting color on layer
+* Show several files at the same time
+* Gerbers definition of layers are ignored
+* Proper documentation on how to interface the backend
+* Surely other things I currently forgotten
+
+What's there:
+* Parses a lot of Gerbers. Considered usable with the excpetion for the
+  aperture macros.
+* Panning  and zooming
+* Several files can be loaded and switched between
+* Different loaded files are shown in different colors
+* Scheme backend
+* Disable backend at configuration time if you don't want to install Guile
+* Start of a simple ps-generating backend
+
+
+Scheme backend : short explanation
+----------------------------------
+Reading Gerber files are actually split into two parts:
+1. parsing
+2. drawing
+When running in batch step 2 is replaced with a call to a Scheme
+function where inparameters are the parsed information about the 
+read Gerber file.
+
+
+Download 
+--------
+Go to http://sourceforge.net/projects/gerbv and click Get.
+
+
+Install
+-------
+You must have GTK+ 1.2 (>1.2.3) installed. If you want to run the backend you 
+must also have Guile installed (>1.3.4).
+
+If you have the gerbv-0.0.1.tar.gz file in your current directory:
+1. gzip -dc gerbv-0.0.1.tar.gz | tar xf -
+2. cd gerbv-0.0.1
+3. ./configure or ./configure --diable-batch if you don't want Guile backend
+4. make
+5. Test the program with for example:
+   ./src/gerbv example/nollezappare/EtchLayer2Bottom.gdo 
+
+
+Help 
+----
+It is greatly appreciated if to receive gerber files that crash gerbv.
+Current status of gerbv makes it very probable, because there area so
+many short cuts and not implemented stuff, so don't expect too much.
+I will add it to the test suite, so make sure I can do that. If they're
+you can still send it to me so I can diagnoze gerbv. But I will under
+no circumstances sign any NDA's or similar.
+
+Backends generating different format like TIFF or HPGL.
+
+Autoconf hacks for platforms that currently supported. Note that Windoze
+is not supported at all and will probably never be since there already
+exists a wast amount of free Gerber viewers to that platform.
+
+
+Thanks
+------
+The greatest thanks at all goes to Ales; starting up this list and 
+hacking gaf. gaf was a big souorce of information when hacking the 
+GTK+ stuff. I have never hacked graphical GUI's before.
+
+The guys at SEUL for hosting this mailing list and the gEDA project.
