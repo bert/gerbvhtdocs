@@ -6,7 +6,7 @@ the "good-luck-charm" release.
 It wasn't long time ago I made a release. This is a minor bugfix release.
 The bugs squashed are:
 * You cannot compile with backend anymore, switch is removed. In last 
-  release this caused compilation error.
+  release this caused compilation error due to bit rot.
 * Drawing of arcs is a constant headache. Mark Whitis found another
   case that I had missed out. Clockwise arcs all of a sudden started
   to be drawn as counter-clockwise.
@@ -15,11 +15,14 @@ The bugs squashed are:
   integers wasn't sufficient, anyhow. They are now doubles all the way.
 * Aperture macro primitive 1 was a _filled_ circle.
 * Image rotate used to cause warnings that it wasn't implemented. Now 
-  if the file has an image rotate on zero degrees there is no warning.
+  if the file has an image rotate on zero degrees there is no warning
+  (yes I've seen it).
 * Dan McMahill discovered that if you tried to swap with an unused layer
   gerbv segfaulted.
 * Peter Monta submitted patch for incremental coordinates.
 * No traces of Guile left...
+
+Thanks to all patchers and error reporters.
 
 Comments, patches and suggestions are, as always, very welcome. We use 
 the bug database and feature request database available through sourceforge. 
