@@ -12,6 +12,9 @@ Notably are:
 * Now you can invert a layer by the push of button. Basically.
 * When gerber files were defined with omit trailing zeros, gerbv could 
   parse them very bad. Now it should work better.
+* Aperture macros did not handle exposures at all. Now they do a better work. 
+  Some thermals are defined from their CAD program as a sequence of aperture
+  macros instead of just using aperture macro 7. They are drawn better now.
 
 Projects
 If you load a bunch of files, sort them into a nice order and give them
