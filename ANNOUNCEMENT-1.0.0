@@ -13,8 +13,9 @@ quirks. Noticeable are:
 * Negative and positive layers versus clear and dark settings. This
   is so weird it makes you yoddle. Anyhow, Richard Lightman spread some
   light on the issue and sent in a patch that made it work properly.
-* Exposire flags on aperture macros revisited.
+* Exposure flags on aperture macros revisited.
 * Some minor build and segfault issues resolved.
+* Holes in circles silently ignored before. 
 
 Why stable and unstable?
 Juergen Haas and Tomasz Motylewski stepped forward and wanted to add
@@ -22,7 +23,7 @@ pick-and-place file handling to gerbv. The differences between GTK+ 1.2
 and GTK+ 2.* forced them to make a choice on one of the versions. 
 Thus I decided in my great wisdom to branch of a stable branch to 
 continue support for GTK+ 1.2. In the head branch (which thus is the 
-unstable) GTK+ 1.2 support will be killed off.
+unstable) GTK+ 1.2 support will slowly be killed off.
 
 What does that mean to all features?
 So all cool new features will be added to the unstable branch, while the
@@ -31,7 +32,9 @@ stable branch will continue to work just about the way it is today.
 What is the naming convention of the branches?
 I have decided to use the naming convention of stable-versus-unstable
 release from Linux. Thus this is 1.0.0. The first unstable release will
-be called 1.1.0.
+be called 1.1.0. In the CVS repository the HEAD branch will thus be the
+unstable branch and currently the stable branch has the tag 
+STABLE_1_x_branch.
 
 Homepage for gerbv is still http://gerbv.sourceforge.net/ where a bug database,
 a feature request database, the CVS and a commit mailinglist is available.
@@ -42,7 +45,7 @@ and grab gerbv-1.0.0.tar.gz
 
 To install the program do
 1. gzip -dc gerbv-1.0.0.tar.gz | tar xf -
-2. cd gerbv-0.16
+2. cd gerbv-1.0.0
 3. ./configure
 4. make install
 
