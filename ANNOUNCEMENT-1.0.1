@@ -1,0 +1,32 @@
+Hello!
+
+This is to announce the second release in the stable branch of
+gerbv, 1.0.1. 
+
+This time it is just a bunch of minor bugfixes. They include:
+* Allocating 1 too little strings caused very strange effects.
+  Found and solved by Mario and primorec.
+* Had forgot to initialize some GCs when drawing some aperture
+  macro primitives. Found by Warren Young.
+
+
+Homepage for gerbv is still http://gerbv.sourceforge.net/ where a bug database,
+a feature request database, the CVS and a commit mailinglist is available.
+
+To download gerbv goto 
+        http://prdownloads.sourceforge.net/gerbv/
+and grab gerbv-1.0.1.tar.gz
+
+To install the program do
+1. gzip -dc gerbv-1.0.1.tar.gz | tar xf -
+2. cd gerbv-1.0.1
+3. ./configure
+4. make install
+
+Interesting configure options are:
+--help              : Lists all options
+--disable-exportpng : Disable compilation of export of PNGs
+--enable-gtk2       : Compile with GTK+ 2 instead of GTK+ 1
+--prefix=<dir>      : Install from dir <prefix>
+--with-maxfiles     : Set maximal number of files (default 20).
+--enable-unit-mm    : Change default unit in status bar to mm from inch.
