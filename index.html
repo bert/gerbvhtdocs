@@ -221,9 +221,13 @@ original authors (which are listed in respective files).
 <li> Download tarballs from <a href="http://prdownloads.sourceforge.net/gerbv">here</a>.
 <li> Expand source by running <code>gzip -dc &lt;filename&gt; | tar xf -</code>
 <li> Change to newly expanded directory 
-<li> Type <code>./configure</code>.<br>
-     If you want to be able to export PNGs, 
-     type <code>./configure --enable-exportpng</code>
+<li> Type <code>./configure &lt;switches&gt;</code>.<br>
+     The following (gerbv) switches are available to configure:
+     <ul>
+     <li><code>--disable-exportpng</code>: If you want to turn off export of PNGs 
+     <li><code>--with-maxfiles=&lt;number&gt;</code>: Maximum number of simultaneously loaded files (default 20).
+     <li><code>--enable-unit-mm</code>: If you want millimeter as default setting for measurement tool.
+     </ul>
 <li> Type <code>make</code>
 <li> Type <code>make install</code>. Please note that if you want to
      install it in a system directory you have to <code>su</code> first.
@@ -234,22 +238,30 @@ original authors (which are listed in respective files).
 <h4>By using anonymous CVS</h4>
 
 <ol>
-<li> Login on anonymous CVS:<br>
-     <code>cvs -d:pserver:anonymous@cvs.gerbv.sourceforge.net:/cvsroot/gerbv login </code> (needed only the first time).
-<li> Check out source tree:<br>
+<li> Login on anonymous CVS (only needed the first time):<br>
+     <code>cvs -d:pserver:anonymous@cvs.gerbv.sourceforge.net:/cvsroot/gerbv login </code>.<br>
+     Press Enter when CVS asks for a password.
+<li> Check out the source tree:<br>
      <code>cvs -z3 -d:pserver:anonymous@cvs.gerbv.sourceforge.net:/cvsroot/gerbv co gerbv</code>
 <li> Recreate all build system files:<br>
      <code>aclocal</code><br>
      <code>autoheader</code><br>
      <code>autoconf</code><br>
-     <code>automake --add-missing</code>
-<li> Type <code>./configure</code>.<br>
-     If you want to be able to export PNGs, 
-     type <code>./configure --enable-exportpng</code>
+     <code>automake --copy --add-missing</code><br>
+     I have also made a simple script which is called with 
+     <code>./rebuild_conf</code> which does all the auto* stuff.
+<li> Type <code>./configure &lt;switches&gt;</code>.<br>
+     The following (gerbv) switches are available to configure:
+     <ul>
+     <li><code>--disable-exportpng</code>: If you want to turn off export of PNGs 
+     <li><code>--with-maxfiles=&lt;number&gt;</code>: Maximum number of simultaneously loaded files (default 20).
+     <li><code>--enable-unit-mm</code>: If you want millimeter as default setting for measurement tool.
+     </ul>
 <li> Type <code>make</code>
 <li> Type <code>make install</code>. Please note that if you want to
      install it in a system directory you have to <code>su</code> first.
 <li> Test by typing <code>gerbv</code>
+<li> Run <code>cvs update</code> in the checked out gerbv directory to get the latest changes.
 </ol>
 </ul>
 
