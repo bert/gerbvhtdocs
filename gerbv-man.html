@@ -1,3 +1,5 @@
+<!-- Creator     : groff version 1.18.1 -->
+<!-- CreationDate: Thu May 27 23:42:56 2004 -->
 <html>
 <head>
 <meta name="generator" content="groff -Thtml, see www.gnu.org">
@@ -16,421 +18,636 @@
 <a href="#ZOOMING">ZOOMING</a><br>
 <a href="#MEASUREMENTS">MEASUREMENTS</a><br>
 <a href="#SUPERIMPOSING">SUPERIMPOSING</a><br>
-<a href="#BACKEND">BACKEND</a><br>
+<a href="#PROJECTS">PROJECTS</a><br>
+<a href="#SCHEME">SCHEME</a><br>
+<a href="#TOOLS FILE">TOOLS FILE</a><br>
 <a href="#ENVIRONMENT">ENVIRONMENT</a><br>
 <a href="#AUTHOR">AUTHOR</a><br>
 <a href="#COPYRIGHT">COPYRIGHT</a><br>
 
 <hr>
-<!-- Creator     : groff version 1.17.2 -->
-<!-- CreationDate: Wed Nov 20 00:16:49 2002 -->
 <a name="NAME"></a>
 <h2>NAME</h2>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-gerbv - Gerber Viewer</td></table>
+<td width="10%"></td>
+<td width="89%">
+<p>gerbv - Gerber Viewer</p>
+</td>
+</table>
 <a name="SYNOPSIS"></a>
 <h2>SYNOPSIS</h2>
-
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>gerbv [OPTIONS] [gerberfile[s]]</b></td></table>
+<td width="10%"></td>
+<td width="89%">
+<p><b>gerbv [OPTIONS] [gerberfile[s]]</b></p>
+</td>
+</table>
 <a name="DESCRIPTION"></a>
 <h2>DESCRIPTION</h2>
-
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<i>gerbv</i> is a viewer for Gerber files. Gerber files is
-generated from different PCB CAD programs and are sent to
+<td width="10%"></td>
+<td width="89%">
+<p><i>gerbv</i> is a viewer for Gerber files. Gerber files
+is generated from different PCB CAD programs and are sent to
 subcontractors to actually make the PCB. <i>gerbv</i> also
-supports Excellon/NC drill files.</td></table>
-
-<table width="100%" border=0 rules="none" frame="void"
-       cols="2" cellspacing="0" cellpadding="0">
-<tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<i>gerbv</i> uses GTK+ 1.2.</td></table>
+supports Excellon/NC drill files.</p>
+</td>
+</table>
 <a name="OPTIONS"></a>
 <h2>OPTIONS</h2>
-
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>Warning!</b> On some platforms, which hasn't long option
-available, only short options are available.</td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p><b>Warning!</b> On some platforms, which hasn&rsquo;t
+long option available, only short options are available.</p>
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="4%"></td><td width="96%">
-<b>gerbv Options</b></td></table>
-
+<td width="4%"></td>
+<td width="95%">
+<p><b>gerbv Options</b></p></td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>-V|--version</b> Prints the version number of gerbv and
-exits.</td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p><b>-V|--version</b> Prints the version number of gerbv
+and exits.</p>
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>-b
-&lt;backend&gt;|--batch=&lt;backend&gt;</b></td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p><b>-l
+&lt;filename&gt;|--log=&lt;filename&gt;</b></p></td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="21%"></td><td width="79%">
-Calls &lt;backend&gt; with the current parsed file. Only
-available if you compiled in Guile support.</td></table>
-
+<td width="21%"></td>
+<td width="77%">
+<p>All error messages etc are stored in a file with filename
+<i>&lt;filename&gt;</i>.</p>
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-
-<b>--geometry=&lt;width&gt;x&lt;height&gt;[&lt;+-&gt;x-position[&lt;+-&gt;y-position]]</b></td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p><b>--tools=&lt;tools-filename&gt;</b></p></td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="21%"></td><td width="79%">
-Sets the the size of the window. X-position and y-position
-are currently ignored by gerbv.</td></table>
-
+<td width="21%"></td>
+<td width="77%">
+<p>Read Excellon tools from the file
+<i>&lt;filename&gt;</i>.</p>
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="4%"></td><td width="96%">
-<b>GTK Options</b></td></table>
+<td width="10%"></td>
+<td width="89%">
 
+<p><b>--geometry=&lt;width&gt;x&lt;height&gt;[&lt;+-&gt;x-position[&lt;+-&gt;y-position]]</b></p></td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>--gtk-module=</b><i>MODULE</i> Load an additional GTK
-module</td></table>
-
+<td width="21%"></td>
+<td width="77%">
+<p>Sets the the size of the window. X-position and
+y-position are currently ignored by gerbv.</p>
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>--g-fatal-warnings</b></td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p><b>-p &lt;project filename&gt;|--project=&lt;project
+filename&gt;</b></p></td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="21%"></td><td width="79%">
-Make all warnings fatal</td></table>
-
+<td width="21%"></td>
+<td width="77%">
+<p>Load a stored project. Please note that the project file
+must be stored in the same directory as the gerber
+files.</p>
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>--gtk-debug=</b><i>FLAGS</i></td></table>
-
+<td width="4%"></td>
+<td width="95%">
+<p><b>GTK Options</b></p></td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="21%"></td><td width="79%">
-GTK debugging flags to set</td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p><b>--gtk-module=</b><i>MODULE</i> Load an additional GTK
+module</p>
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>--gtk-no-debug=</b><i>FLAGS</i></td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p><b>--g-fatal-warnings</b></p></td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="21%"></td><td width="79%">
-GTK debugging flags to unset</td></table>
-
+<td width="21%"></td>
+<td width="77%">
+<p>Make all warnings fatal</p>
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>--gdk-debug=</b><i>FLAGS</i></td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p><b>--gtk-debug=</b><i>FLAGS</i></p></td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="21%"></td><td width="79%">
-GDK debugging flags to set</td></table>
-
+<td width="21%"></td>
+<td width="77%">
+<p>GTK debugging flags to set</p>
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>--gdk-no-debug=</b><i>FLAGS</i></td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p><b>--gtk-no-debug=</b><i>FLAGS</i></p></td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="21%"></td><td width="79%">
-GDK debugging flags to unset</td></table>
-
+<td width="21%"></td>
+<td width="77%">
+<p>GTK debugging flags to unset</p>
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>--display=</b><i>DISPLAY</i></td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p><b>--gdk-debug=</b><i>FLAGS</i></p></td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="21%"></td><td width="79%">
-X display to use</td></table>
-
+<td width="21%"></td>
+<td width="77%">
+<p>GDK debugging flags to set</p>
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>--sync</b></td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p><b>--gdk-no-debug=</b><i>FLAGS</i></p></td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="21%"></td><td width="79%">
-Make X call synchronous</td></table>
-
+<td width="21%"></td>
+<td width="77%">
+<p>GDK debugging flags to unset</p>
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>--no-xshm</b></td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p><b>--display=</b><i>DISPLAY</i></p></td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="21%"></td><td width="79%">
-Don't use X shared memory extension</td></table>
+<td width="21%"></td>
+<td width="77%">
+<p>X display to use</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="5" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="8%">
 
+<p><b>--sync</b></p>
+</td>
+<td width="13%"></td>
+<td width="33%">
+
+<p>Make X call synchronous</p>
+</td>
+<td width="32%">
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>--name=</b><i>NAME</i></td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p><b>--no-xshm</b></p></td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="21%"></td><td width="79%">
-Program name as used by the window manager</td></table>
-
+<td width="21%"></td>
+<td width="77%">
+<p>Don&rsquo;t use X shared memory extension</p>
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<b>--class=</b><i>CLASS</i></td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p><b>--name=</b><i>NAME</i></p></td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="21%"></td><td width="79%">
-Program class as used by the window manager</td></table>
+<td width="21%"></td>
+<td width="77%">
+<p>Program name as used by the window manager</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>--class=</b><i>CLASS</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Program class as used by the window manager</p>
+</td>
+</table>
 <a name="GENERAL"></a>
 <h2>GENERAL</h2>
-
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-When you start gerbv you can give the files to be loaded on
-the command line, either as each file separated with a space
-or by using wildcards.</td></table>
-
-<table width="100%" border=0 rules="none" frame="void"
-       cols="2" cellspacing="0" cellpadding="0">
-<tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-The user interface is graphical. Simply press left mouse
+<td width="10%"></td>
+<td width="89%">
+<p>When you start gerbv you can give the files to be loaded
+on the command line, either as each file separated with a
+space or by using wildcards.</p>
+<!-- INDENTATION -->
+<p>The user interface is graphical. Simply press left mouse
 button and the image will pan as you move the mouse. To
 manipulate a layer, right-click on one of the rightmost
 buttons. That will bring up a pop-up menu where you can
 select what you want to do with that layer (load file,
-change color, etc).</td></table>
-
-<table width="100%" border=0 rules="none" frame="void"
-       cols="2" cellspacing="0" cellpadding="0">
-<tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-If you hold the mouse button over one the rightmost button a
-tooltips will show you the name of the file loaded on that
-layer.</td></table>
-
-<table width="100%" border=0 rules="none" frame="void"
-       cols="2" cellspacing="0" cellpadding="0">
-<tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-Default of concurrently loaded files are 20 layers. You can
-change this during configure with:</td></table>
-
-<table width="100%" border=0 rules="none" frame="void"
-       cols="2" cellspacing="0" cellpadding="0">
-<tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-./configure with-maxfiles=&lt;number&gt;</td></table>
+change color, etc).</p>
+<!-- INDENTATION -->
+<p>If you hold the mouse button over one the rightmost
+button a tooltips will show you the name of the file loaded
+on that layer.</p>
+<!-- INDENTATION -->
+<p>Default of concurrently loaded files are 20 layers. You
+can change this during configure with:</p>
+<!-- INDENTATION -->
+<p>./configure with&minus;maxfiles=&lt;number&gt;</p>
+</td>
+</table>
 <a name="ACTIVATION AND DEACTIVATION OF LAYERS"></a>
 <h2>ACTIVATION AND DEACTIVATION OF LAYERS</h2>
-
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-You can load several files at one time. You can then turn
+<td width="10%"></td>
+<td width="89%">
+<p>You can load several files at one time. You can then turn
 displaying of the layers on and off by clicking on one of
-the rightmost buttons.</td></table>
-
-<table width="100%" border=0 rules="none" frame="void"
-       cols="2" cellspacing="0" cellpadding="0">
-<tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-You can also control this from the keyboard. Press Alt,
+the rightmost buttons.</p>
+<!-- INDENTATION -->
+<p>You can also control this from the keyboard. Press Alt,
 enter the number on the layer you want activate/deactivate
-on the numerical keypad and then release the Alt
-key.</td></table>
+on the numerical keypad and then release the Alt key.</p>
+</td>
+</table>
 <a name="ZOOMING"></a>
 <h2>ZOOMING</h2>
-
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-Zooming can be handled by either menu choices, keypressing,
-middle mouse button or scroll wheel. If you press Alt+I you
-will zoom in and if you press Alt+O you will zoom out.If you
-press middle mouse button you will zoom out, and if you
-press Shift and middle mouse button you will zoom in. Scroll
-wheel works if you enabled that in your X server and mapped
-it to button 4 and 5.</td></table>
-
-<table width="100%" border=0 rules="none" frame="void"
-       cols="2" cellspacing="0" cellpadding="0">
-<tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-You can also do zooming by outline. Press right mouse
+<td width="10%"></td>
+<td width="89%">
+<p>Zooming can be handled by either menu choices,
+keypressing, middle mouse button or scroll wheel. If you
+press Alt+I you will zoom in and if you press Alt+O you will
+zoom out.If you press middle mouse button you will zoom out,
+and if you press Shift and middle mouse button you will zoom
+in. Scroll wheel works if you enabled that in your X server
+and mapped it to button 4 and 5. You can also zoom in by
+pressing z and zoom out by pressing shift+z (ie Z). You can
+make the image fit by pressing f (there is also a menu
+alternativ for this).</p>
+<!-- INDENTATION -->
+<p>You can also do zooming by outline. Press right mouse
 button, draw, release. The dashed line shows how the zooming
 will be dependent on the resolution of the window. The
 non-dashed outline will show what you actually selected. If
 you change your mind when started to mark outline, you can
-always abort by pressing escape.</td></table>
+always abort by pressing escape. By holding down the shift
+key when you press the right mouse button, you will select
+an area where the point you started at will be the center of
+your selection.</p>
+</td>
+</table>
 <a name="MEASUREMENTS"></a>
 <h2>MEASUREMENTS</h2>
-
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-You can do measurement on the image displayed. By pressing
-shift, the cursor changes to a plus. By using left mouse
-button you can draw the lines that you want to measure.
-Currently the gerber files must be in inches. The result of
-the last measurement is also displayed on the statusbar. All
-measurements are in the drawing until you either zoom, pan
-or press the escape key.</td></table>
-
-<table width="100%" border=0 rules="none" frame="void"
-       cols="2" cellspacing="0" cellpadding="0">
-<tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-The statusbar shows the current mouse position on the layer
-in the same coordinates as in the file. Ie if you have (0,0)
-in the middle of the image in the gerber files, the
-statusbar will show (0,0) at the same place.</td></table>
+<td width="10%"></td>
+<td width="89%">
+<p>You can do measurement on the image displayed. By
+pressing shift, the cursor changes to a plus. By using left
+mouse button you can draw the lines that you want to
+measure. The result of the last measurement is also
+displayed on the statusbar. All measurements are in the
+drawing until you either zoom, pan or press the escape
+key.</p>
+<!-- INDENTATION -->
+<p>The statusbar shows the current mouse position on the
+layer in the same coordinates as in the file. Ie if you have
+(0,0) in the middle of the image in the gerber files, the
+statusbar will show (0,0) at the same place.</p>
+</td>
+</table>
 <a name="SUPERIMPOSING"></a>
 <h2>SUPERIMPOSING</h2>
-
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-When you load several Gerber files, you can display the
+<td width="10%"></td>
+<td width="89%">
+<p>When you load several Gerber files, you can display them
 &quot;on top of each other&quot;, ie superimposing. The
 general way to display them are that upper layers cover the
-layers beneath, which is called copy (GTK+
-terms).</td></table>
-
+layers beneath, which is called copy (GTK+ terms).</p>
+<!-- INDENTATION -->
+<p>The other ways selectable are and, or, xor and invert.
+They map directly to corresponding functions in GTK. In GTK
+they are described as: &quot;For colored images, only
+GDK_COPY, GDK_XOR and GDK_INVERT are generally useful. For
+bitmaps, GDK_AND and GDK_OR are also useful.&quot;</p>
+</td>
+</table>
+<a name="PROJECTS"></a>
+<h2>PROJECTS</h2>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-The other ways selectable are and, or, xor and invert. They
-map directly to corresponding functions in GTK. In GTK they
-are described as: &quot;For colored images, only GDK_COPY,
-GDK_XOR and GDK_INVERT are generally useful. For bitmaps,
-GDK_AND and GDK_OR are also useful.&quot;</td></table>
-<a name="BACKEND"></a>
-<h2>BACKEND</h2>
-
+<td width="10%"></td>
+<td width="89%">
+<p>gerbv can also handle projects. A project consist of
+bunch of loaded layers with their resp. color and the
+background color. The easiest way to create a project is to
+load all files you want into the layer you want, set all the
+colors etc and do a &quot;Save Project As...&quot;.</p>
+<!-- INDENTATION -->
+<p>You load a project either from the menu bar or by using
+the commandline switches -p or --project.</p>
+<!-- INDENTATION -->
+<p>Currently there is a limit in that the project file must
+be in the same directory as the gerber files to be
+loaded.</p>
+</td>
+</table>
+<a name="SCHEME"></a>
+<h2>SCHEME</h2>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-If you compiled in Guile you can run gerbv as a parser with
-output generated by a Scheme script. This system is
-currently under heavy redesign, so use this with
-caution.</td></table>
-
+<td width="10%"></td>
+<td width="89%">
+<p>The project files are simple Scheme programs that is
+interpreted by a built in Scheme interpreter. The Scheme
+interpreter is TinyScheme and needs a Scheme program called
+init.scm to initialize itself. The search path for init.scm
+is (in the following order)
+/usr/local/share/gerbv/scheme/share/gerbv/scheme/, the
+directory with the executable gerbv, the directory gerbv was
+invoked from and finally according to the environment
+variable GERBV_SCHEMEINIT.</p>
+</td>
+</table>
+<a name="TOOLS FILE"></a>
+<h2>TOOLS FILE</h2>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-If you call gerbv with --batch=&lt;backend&gt;, gerbv starts
-looking for a file namned gerb-&lt;backend&gt;.scm. It
-starts looking for it in the directory gerbv was invoked
-from, then it looks in $HOME/.gerbv/scheme and finally in
-/usr/local/share/gerbv/scheme.</td></table>
+<td width="10%"></td>
+<td width="89%">
+<p>Not every Excellon drill file is self-sufficient. Some
+CADs produce .drd files where tools are only referenced, but
+never defined (such as what diameter of the tool is.) Eagle
+CAD is one of such CADs, and there are more since many board
+houses require Tools files.</p>
+<!-- INDENTATION -->
+<p>A Tools file is a plain text file which you create in an
+editor. Each line of the file describes one tool (the name
+and the diameter, in inches):</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="3" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="7%"></td>
+<td width="7%">
+</td>
+<td width="85%">
 
+<p>T01 0.024</p>
+</td>
+<tr valign="top" align="left">
+<td width="7%"></td>
+<td width="7%"></td>
+<td width="85%">
+
+<p>T02 0.040</p>
+</td>
+<tr valign="top" align="left">
+<td width="7%"></td>
+<td width="7%"></td>
+<td width="85%">
+
+<p>...</p>
+</td>
+</table>
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-Currently the only documentation on how to write a backend
-is the code in the scheme directory of the
-distribution.</td></table>
+<td width="10%"></td>
+<td width="89%">
+<p>These are the same tools (T01 etc.) that are used in the
+Drill file. A standard practice with Eagle is to create an
+empty Tools file, run the CAM processor, and the error
+report tells you which tools you &quot;forgot&quot;. Then
+you put these tools into the file and rerun the CAM
+processor.</p>
+<!-- INDENTATION -->
+<p>The file can have any name you wish, but Eagle expects
+the file type to be &quot;.drl&quot;, so it makes sense to
+keep it this way. Some board houses are still using CAM
+software from DOS era, so you may want to excercise caution
+before going beyond the 8.3 naming convention.</p>
+<!-- INDENTATION -->
+<p>When <i>gerbv</i> reads the Tools file it also checks
+that there are no duplicate definitions of tools. This does
+happen from time to time as you edit the file by hand,
+especially if you, during design, add or remove parts from
+the board and then have to add new tools into the Tools
+file. The duplicate tools are a very serious error which
+will stop (HOLD) your board until you fix the Tools file and
+maybe the Excellon file. <i>gerbv</i> will detect duplicate
+tools if they are present, and will exit immediately to
+indicate such a fatal error in a very obvious way. A message
+will also be printed to standard error.</p>
+<!-- INDENTATION -->
+<p>If your Excellon file does not contain tool definitions
+then <i>gerbv</i> will preconfigure the tools by deriving
+the diameter of the drill bit from the tool number. This is
+probably not what you want, and you will see warnings
+printed on the console.</p>
+</td>
+</table>
 <a name="ENVIRONMENT"></a>
 <h2>ENVIRONMENT</h2>
-
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-No environment variables are currently in use.</td></table>
+<td width="10%"></td>
+<td width="89%">
+<p>GERBV_SCHEMEINIT</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Defines where init.scm file is stored. Used by scheme
+interpreter, which is used by project reader.</p>
+</td>
+</table>
 <a name="AUTHOR"></a>
 <h2>AUTHOR</h2>
-
+<!-- INDENTATION -->
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<pre>Stefan Petersen (spe@stacken.kth.se): Overall hacker and project leader
-Andreas Andersson (e92_aan@e.kth.se): Drill file support and general hacking
-Anders Eriksson (anders@umunet.org) : X and GTK+ ideas and hacking
+<td width="10%"></td>
+<td width="89%">
+<pre>Stefan Petersen (spetm at users.sourceforge.net): Overall hacker and project leader
+Andreas Andersson (e92_aan at e.kth.se): Drill file support and general hacking
+Anders Eriksson (aenfaldor at users.sourceforge.net) : X and GTK+ ideas and hacking
 
-</pre></td></table>
+</pre>
+</td>
+</table>
 <a name="COPYRIGHT"></a>
 <h2>COPYRIGHT</h2>
+<!-- INDENTATION -->
 
 <table width="100%" border=0 rules="none" frame="void"
        cols="2" cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
-<td width="10%"></td><td width="90%">
-<pre>Copyright  2001-2002 Stefan Petersen
+<td width="10%"></td>
+<td width="89%">
+<pre>Copyright &copy;  2001-2004 Stefan Petersen
 
 This document can be freely redistributed according to the terms of the
 GNU General Public License version 2.0
-</pre></td></table>
+
+</pre>
 <hr>
 </body>
 </html>
