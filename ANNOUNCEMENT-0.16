@@ -1,0 +1,63 @@
+Bueono vistas!
+
+It is time for one more of the more and more randomly releases of gerbv.
+This is the sixteenth release of the Free Gerber Viewer, aka gerbv,
+the "projects-r-us" release.
+
+This time it's not so many bugs found, but a big bunch of features added.
+Notably are:
+* projects: you can save and load setups in what I call projects.
+* GTK+ 2 support: Compiles under GTK+ 2 with the added benfit of
+  `ldd gerbv|wc -l` now returns 24 instead of 14.
+* Now you can invert a layer by the push of button. Basically.
+* When gerber files were defined with omit trailing zeros, gerbv could 
+  parse the very bad. Now it should work better.
+
+Projects
+If you load a bunch of files, sort them into a nice order and give them
+nice colors, you can now save this setup and recall it at a later time.
+The project file format is in Scheme and for this purpose I have incorporated
+a Scheme interpreter called TinyScheme. The casual user shouldn't note
+this but the advanced user can probably do cool stuff with it.
+
+The project stuff is very untested and I actually don't know how people will
+use it. Try it out and send me your suggestions for improvements. The main
+question is how paths should be handled. How it is intended to work is 
+described in the man page.
+
+Why bring in a complete Scheme interpreter when all you need is a simple
+resource file parser? Because I could. And I missed it since I threw
+Guile out head over heels.
+
+GTK+ 2 support
+This was a necessary step for me, because when more and more distributions
+switch over to gnome2/gtk2 I didn't want to be left behind. There are still
+some quirks around this, so you have to enable it at configure time.
+
+I have in one instance used GTK_ENABLE_BROKEN to get around stuff
+deprecated in GTK+ 2 (see log.c).
+Thanks to all patchers and error reporters.
+
+If there is anyone out there wanting to hack and develop gerbv 
+further, please step forward.
+
+Homepage for gerbv is still http://gerbv.sourceforge.net/ where a bug database,
+a feature request database, the CVS and a commit mailinglist is available.
+
+To download gerbv goto 
+        http://prdownloads.sourceforge.net/gerbv/
+and grab gerbv-0.16.tar.gz
+
+To install the program do
+1. gzip -dc gerbv-0.16.tar.gz | tar xf -
+2. cd gerbv-0.16
+3. ./configure
+4. make install
+
+Interesting configure options are:
+--help              : Lists all options
+--disable-exportpng : Disable compilation of export of PNGs
+--enable-gtk2       : Compile with GTK+ 2 instead of GTK+ 1
+--prefix=<dir>      : Install from dir <prefix>
+--with-maxfiles     : Set maximal number of files (default 20).
+--enable-unit-mm    : Change default unit in status bar to mm from inch.
