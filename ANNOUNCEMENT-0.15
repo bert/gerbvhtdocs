@@ -16,7 +16,7 @@ The bugs fixed are:
   Now Simon Munton sent in a patch to fix this problem.
 * Simon also had other problems with polygons that made them 
   look very strange. He also sent in a patch to solve that 
-  problem. 
+  problem. Later on Kent Dahlgren reported the same problem.
 * Some Gerber generators seems to have started to relax some
   syntax and thus has started to write for instance G4 instead
   of G04. Peter Brueckner discovered that and sent in a patch
