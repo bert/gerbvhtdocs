@@ -15,6 +15,8 @@ Notably are:
 * Aperture macros did not handle exposures at all. Now they do a better work. 
   Some thermals are defined from their CAD program as a sequence of aperture
   macros instead of just using aperture macro 7. They are drawn better now.
+* Handles tool tables when drawing drill files thanks to Dimitri. See man page
+  for more info.
 
 Projects
 If you load a bunch of files, sort them into a nice order and give them
