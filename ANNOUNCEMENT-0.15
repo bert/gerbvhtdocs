@@ -1,0 +1,51 @@
+Hello everybuddy!
+
+Time for the fifteenth release of the Free Gerber Viewer,
+aka gerbv, the "even-more-nonexisting-bugs-squashed" release.
+
+It is kind of fun that different people discover the same bugs
+at about the same time. This time I have received several 
+bug reports for the same bug. The bugs this time is quite
+severe and I amazed that they haven't been discovered before.
+
+The bugs fixed are:
+* A long outstanding bug was that if polygons had circular 
+  outline it wouldn't be drawn as circular outline. I have 
+  not considered this bug important since it was kind of 
+  "theoretical" bug but added it to the bug database. 
+  Now Simon Munton sent in a patch to fix this problem.
+* Simon also had other problems with polygons that made them 
+  look very strange. He also sent in a patch to solve that 
+  problem. 
+* Some Gerber generators seems to have started to relax some
+  syntax and thus has started to write for instance G4 instead
+  of G04. Peter Brueckner discovered that and sent in a patch
+* One of the aperture macros (no 7, thermal ) was severly broken.
+  I had forgotten all about it, but Drew Moore reminded me by 
+  sending an example. I basically had to rewrite all of the 
+  drawing routine for that macro.
+
+Thanks to all patchers and error reporters.
+
+If there is anyone out there wanting to hack and develop gerbv 
+further, please step forward.
+
+Homepage for gerbv is still http://gerbv.sourceforge.net/ where a bug database,
+a feature request database, the CVS and a commit mailinglist is available.
+
+To download gerbv goto 
+        http://prdownloads.sourceforge.net/gerbv/
+and grab gerbv-0.15.tar.gz
+
+To install the program do
+1. gzip -dc gerbv-0.15.tar.gz | tar xf -
+2. cd gerbv-0.15
+3. ./configure
+4. make install
+
+Interesting configure options are:
+--help              : Lists all options
+--disable-exportpng : Disable compilation of export of PNGs
+--prefix=<dir>      : Install from dir <prefix>
+--with-maxfiles     : Set maximal number of files (default 20).
+--enable-unit-mm    : Change default unit in status bar to mm from inch.
