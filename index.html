@@ -18,6 +18,13 @@
   RS-274X. It might be possible to make an RS-274X file out of 
   an RS-274D file and an aperture list.
 <p>
+  gerbv also supports drill files. The format supported are known under
+  names as NC-drill or Excellon. The format are a bit undefined and
+  different EDA-vendors implement it different. But basically you need
+  to have the tools definition in the file, then the parser is quite
+  tolerant. The different holes are shown as dots in the (scaled) correct
+  size.
+<p>
   The different layers of the PCB are separated into different files. 
   gerbv can load all files at the same time, though it can currently not show 
   them at the same time. You have to browse through the different layers
@@ -45,12 +52,12 @@
 
   gerbv is dependent on a couple of different external libraries:
 <ul>
-<li> <a href="http://www.gtk.org/">GTK+</a>, the graphical toolkit.
+<li> <a href="http://www.gtk.org/">GTK+</a>, the graphical toolkit (required).
 
 <li><a href="http://www.gnu.org/software/guile/guile.html">Guile</a>, 
-     an embeddable Scheme interpretator. 
+     an embeddable Scheme interpretator (optional). 
 <li>getopt_long from the GNU project. gerbv can do without getopt_long
-    long options to the program will hence not be available.
+    long options to the program will hence not be available (optional).
 </ul>
 gerbv is basically known to compile on all system which the above 
 mentioned libraries compile on, basically all flavors of *ix. It
@@ -75,6 +82,10 @@ original authors (which are listed in respective files)
 
 <h3>News</h3>
 <ul>
+<li> 2001-11-14 : Fifth relase (0.0.5) Available      
+     <a href="http://prdownloads.sourceforge.net/gerbv/gerbv-0.0.5.tar.gz">here</a>.
+     Announcement is readable <a href="ANNOUNCEMENT-0.0.5">here</a>.
+
 <li> 2001-10-27 : Fourth release (0.0.4). Available      
      <a href="http://prdownloads.sourceforge.net/gerbv/gerbv-0.0.4.tar.gz">here</a>.
      Announcement is readable <a href="ANNOUNCEMENT-0.0.4">here</a>.
@@ -108,6 +119,7 @@ original authors (which are listed in respective files)
 <ul>
 <li> Parses a lot of Gerbers. Considered usable with the excepetion for the
   aperture macros.
+<li> Drill file support(NC drill/Excellon).
 <li> Panning  and zooming
 <li> Several files can be loaded and switched between
 <li> Different loaded files are shown in different colors
@@ -118,22 +130,12 @@ original authors (which are listed in respective files)
 
 <h4>What is missing:</h4>
 <ul>
-<li> Multi quadrant arcs are not drawn properly(red lines will be drawn)
 <li> Aperture macros (red dots shows where they should be)
 <li> Setting color on layer
 <li> Show several files at the same time
 <li> Gerbers definition of layers are ignored
 <li> Proper documentation on how to interface the backend
 <li> Surely other things I currently forgotten
-</ul>
-
-<h4>Planned fixes (besides missing stuff)</h4>
-<ul> 
-<li> Parser should return a calculated arc center point (currently 
-     done when drawing)
-<li> Send filename to scheme function when running batch mode
-</ul> 
-
 </ul>
 
 
@@ -210,14 +212,14 @@ original authors (which are listed in respective files)
 
 
 <h3>Contact information</h3>
-<A href="http://sourceforge.net"> 
-<IMG src="http://sourceforge.net/sflogo.php?group_id=33921"
-  width="88" height="31" border="0" alt="SourceForge Logo"></A> <p>
-
   Stefan Petersen<br>
   E-mail: <a href="mailto:spe@stacken.kth.se">spe@stacken.kth.se</a><br>
   Web: <a href="http://gerbv.sourceforge.net/">
        http://gerbv.sourceforge.net/</a><br>
+
+<A href="http://sourceforge.net"> 
+<IMG src="http://sourceforge.net/sflogo.php?group_id=33921"
+  width="88" height="31" border="0" alt="SourceForge Logo"></A> <p>
 
 
 <hr>

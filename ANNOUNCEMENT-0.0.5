@@ -1,0 +1,64 @@
+Hello fellows
+
+it's time for the next release of Gerber Viewer, aka gerbv, 
+the "drill file support"-release.
+
+Last relase I promised drill file support. Now it's here.
+By adding the drill file support I was forced to do some 
+cleaning up of the code, so there are great many changes
+since last relase. I want to thank my friend Andreas 
+Andersson aka Pitch for the drill file support and ideas.
+
+Some menu alternatives and speed keys changed with the 
+addition of drill support. Especially to note; you have to
+use -d|--drill= to define a drill file at the command line.
+Default is Gerber file. More on that is in the man page.
+
+I have changed how arcs are handled. Before I did a lot of 
+calculations during (re)drawing of arcs. That has moved to 
+the parsing stage now, which hopefully brings some increase
+in speed when redrawing. Now multi quadrant arcs are also 
+drawn, though it has been very little tested. Be carefull.
+
+The arc calculation changes also meant that the API on the 
+Scheme side of things changed, hopefully to the better.
+
+If you have a mouse with a scroll wheel, you are now able to
+zoom in and out with it. 
+
+There are also some bugs removed and some bugs added. The 
+biggest bug (pointed out by Dan Christian, thanks!) caused
+random dots to be plotted out.
+
+For next release I think I will do some more GUI hacks. Or
+maybe Aperture Macro support. That is can of worm waiting 
+to happen.
+
+Comments, patches and suggestions are, as always, very welcome.
+
+Homepage for gerbv is still http://gerbv.sourceforge.net/
+
+To download gerbv goto 
+	http://prdownloads.sourceforge.net/gerbv/
+and grab gerbv-0.0.5.tar.gz
+
+To install the program do
+1. gzip -dc gerbv-0.0.5.tar.gz | tar xf -
+2. cd gerbv-0.0.5
+3. ./configure
+4. make install
+
+Interesting configure options are:
+--help          : Lists all options
+--disable-batch : Disable compilation of Guile/Scheme backends
+--prefix=<dir>  : Install from dir <prefix>
+
+
+What's new in 0.0.5
+- Drill file support (biggest addition ever)
+- Zoom in and out with scroll wheel
+- Reorganisation of source
+- Arc calculation moved from drawing stage to parsing stage
+- Multi quadrant arcs supported
+- API changes in the Scheme interface
+- Bugs squashed and added
