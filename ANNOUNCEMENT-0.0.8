@@ -1,0 +1,61 @@
+Hi,
+
+it's time for the next release of Gerber Viewer, aka gerbv, 
+the "popup menu"-release.
+
+There was a couple of months since last release. The first two months 
+I didn't do anything, then I started some minor hacking. I have managed 
+to "recruit" a helping hand from my friend Anders Eriksson, who has 
+more experience in graphical stuff than I have.
+ 
+Graphical quirks fixed is:
+- zooming around the mouse pointer. This was probably the most requested 
+  feature and the thing I was most unpleased with. 
+- zooming several steps at once goes much faster. No calculation and
+  redrawing in each zoom step, but in the last step.
+
+When you click with the left mouse button on a layer button you
+get a popup menu with color selection, load file and unload file.
+That is on a "per layer-basis". The "global" "Open File..." menu is
+removed in favor for this.
+
+For the next release most of the ideas are in the feature request 
+database. One plan I have is to remove the Guile stuff. If you you
+use it, please get in contact ASAP. It wasn't really what I thought 
+it would be.
+
+Comments, patches and suggestions are, as always, very welcome. I have
+started to use the bug database and feature request database available
+through sourceforge. Have a look there if you curious what's going on
+or if you have any idea that you think should be implemented in gerbv.
+
+Homepage for gerbv is still http://gerbv.sourceforge.net/
+
+To download gerbv goto 
+	http://prdownloads.sourceforge.net/gerbv/
+and grab gerbv-0.0.8.tar.gz
+
+To install the program do
+1. gzip -dc gerbv-0.0.8.tar.gz | tar xf -
+2. cd gerbv-0.0.8
+3. ./configure
+4. make install
+
+Interesting configure options are:
+--help          : Lists all options
+--disable-batch : Disable compilation of Guile/Scheme backends
+--prefix=<dir>  : Install from dir <prefix>
+
+
+What's new in 0.0.8
+- Added pop up menu with a right click on layer buttons with:
+  - color selection.
+  - load file
+  - unload file
+- Multi quadrant arc bug fix. Reported by Neil Darlow.
+- Zooming around mouse pointer.
+- Setting up a clock as mouse pointer when redrawing.
+- Zooming is done restarted if several zoom step in a row is requested.
+- Ovals were drawn as ellypses, not anymore. Hinted by Dino Ghilardi.
+- Multi quadrant arcs had severe bugs. Fixed now.
+
