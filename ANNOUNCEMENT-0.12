@@ -1,0 +1,69 @@
+Hello friends of gerbv (and all others too, of course)
+
+Time for the twelfth release of the Free Gerber Viewer, aka gerbv,
+the "not-as-stable" release.
+
+There is about two and a half months ago since I made the last release.
+The need for release has decreased since there are less and less 
+severe bugs. And it has been both Christmas and New Year, so the family
+life has had precedence over implementing new cool features.
+
+What has been fixed then? The biggest visible change is probably the
+"popup error window". It's all thanks to Dino Ghilardi who described
+to me how GTK's logging works by sending me source code that I (ab)used.
+Now gerbv is more of a true X application. 
+
+There are still some quirks around this that I hope I get your help 
+to resolve.Sometimes an error appears and the program quits so you 
+don't have a chance to be able to see the error message in that split 
+second it appears. Fix that I must.
+
+If that happens you have a commandline switch so you can log all error
+messages to a file. Put -l <logfile> or --log=<logfile>. It's of course
+all described in the man page.
+
+Then there is this improved millimeter handling. The only example I had
+using millimeter was broken from my point of view so I ask you to use
+it with caution and report all problems to me. Not as tested as I would
+like to.
+
+Daniel Dorau has written a short description on how to get Cadsoft's Eagle
+to generate proper drill files. And a small Perl script to accompanion that.
+It's available from the webpage and in the distribution under doc/eagle.
+
+All layers on and off.
+
+Then there are sleeve of bug fixes too including:
+* Minor compiler warnings using GCC 3.x fixed.
+* G55 implemented. Was actually found in an example in the "specification" .
+* Building on MacOS X. 
+* Some filled polygons could have problems and not being drawn properly.
+* 64-bit compilation warnings fixed.
+* Some (very few, only seen once by me) ccw arcs could be drawn cw.
+* Plus signs in the coordinates of a drill file properly handled.
+
+The man page is update to reflect all changes in the usage of gerbv.
+
+Comments, patches and suggestions are, as always, very welcome. We use 
+the bug database and feature request database available through sourceforge. 
+Have a look there if you curious what's going on or if you have any idea 
+that you think should be implemented in gerbv.
+
+Homepage for gerbv is still http://gerbv.sourceforge.net/ where a bug database,
+a feature request database, the CVS and a commit mailinglist is available.
+
+To download gerbv goto 
+        http://prdownloads.sourceforge.net/gerbv/
+and grab gerbv-0.12.tar.gz
+
+To install the program do
+1. gzip -dc gerbv-0.12.tar.gz | tar xf -
+2. cd gerbv-0.12
+3. ./configure
+4. make install
+
+Interesting configure options are:
+--help              : Lists all options
+--enable-batch      : Enable compilation of Guile/Scheme backends
+--disable-exportpng : Disable compilation of export of PNGs
+--prefix=<dir>      : Install from dir <prefix>
