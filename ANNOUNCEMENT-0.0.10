@@ -1,0 +1,83 @@
+'allo 'allo,
+
+it's time for the tenth release of Gerber Viewer, aka gerbv, 
+the "super imposing" release.
+
+Yet another bunch of bugs in different corner cases of Gerber files
+has been fixed. Many fixes in polygon area fill, some fixes in calculating
+circles, a statically allocated array caused strange stray segfaults when 
+drawing aperture macros. Much of this after a great example from Joachim 
+Jansen. That example alone revealed four or five bugs. So if your examples 
+don't look like you thought it would, please send them in so I can fix it 
+so gerbv can view them. 
+
+A bunch of new command line switches. Most important are:
+* --display: use as in all other X-programs, ie open window from a remote
+  computer.
+* --geometry: Sets the geometry. Usually gerbv guess the resolution of
+  your window and sets the window size accordingly. If you for instance 
+  have a bigger virtual window than actual screen the window can get quite 
+  big. With this switch you can override with for example 
+  --geometry=400x300
+
+You can read more about the rest of command line switches on the man page.
+
+Some application icons in the pixmaps directory.
+
+Fixes in drill file parser. Many drill files don't have drill sizes in them,
+else perfectly valid files. Pitch fix makes gerbv parse drill files even 
+though they don't have drill sizes defined, but under protest.
+
+Greatest fix of them all. Super imposing. Handles paint-scratch-paint 
+more proper. Changed dramatically how different layers are drawn "on 
+top of each other". The good thing is that it actually work as intended,
+the bad thing is that redrawing is even slower. A great thanks goes to
+Dino Ghilardi that came up with the idea on how I should do this.
+You can select how different layers are imposed on each other. I don't
+actually know if they are to any use to anyone, but as GTK offered them
+I implemented them. For more gory details, see the man page. If you
+have any idea on how to use, please tell me...;-)
+
+Activation and deactivation of layers from the keyboard is possible. 
+Press down Alt and then type the layer number you want to 
+activate/deactivate on the numerical keypad. DOS-flashback...
+
+The measurement bar only displays one unit at a time, mm's or mils.
+Select from the menu. Default is mil, but can be changed by the configure
+flag --enable-unit-mm.
+
+Dinos export-PNG code is now configured in by default. To remove it,
+use --disable-exportpng when running ./configure.
+
+You can also set the maximum number of loaded files from ./configure.
+Use the flag --with-maxfiles=<number>. Default <number> is 20 (as always).
+
+Next release? No promises, but I will try to get some TinyScheme in so
+I can use it as a resource file parser at least. And I think I will
+reconsider how I enumerate the releases, so next release will probably
+be 0.11 then.
+
+Comments, patches and suggestions are, as always, very welcome. We use 
+the bug database and feature request database available through sourceforge. 
+Have a look there if you curious what's going on or if you have any idea 
+that you think should be implemented in gerbv.
+
+Homepage for gerbv is still http://gerbv.sourceforge.net/ where bug database,
+feature request database, CVS and mail list are available.
+
+To download gerbv goto 
+	http://prdownloads.sourceforge.net/gerbv/
+and grab gerbv-0.0.10.tar.gz
+
+To install the program do
+1. gzip -dc gerbv-0.0.10.tar.gz | tar xf -
+2. cd gerbv-0.0.10
+3. ./configure
+4. make install
+
+Interesting configure options are:
+--help             : Lists all options
+--enable-batch     : Enable compilation of Guile/Scheme backends
+--enable-exportpng : Enable compilation of export of PNGs
+--prefix=<dir>     : Install from dir <prefix>
+
