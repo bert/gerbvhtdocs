@@ -15,7 +15,7 @@
   as basis for the manufacturing process. 
 <p>
   The different layers of the PCB are separated into different files. 
-  gerbv can load all files at the same time, though it can not show 
+  gerbv can load all files at the same time, though it can currently not show 
   them at the same time. You have to browse through the different layers
   with the radio buttons on the right side.
 <p>
@@ -47,21 +47,25 @@
 <li>getopt_long from the GNU project. gerbv can do without getopt_long
     long options to the program will hence not be available.
 </ul>
-  gerbv is basically known to compile on all system which the above 
-  mentioned libraries compile on, basically all flavors of *ix. It
-  has been tested on Linux (2.2.18pre21), NetBSD (1.4.1), Solaris 
-  (5.7 and 5.8).
-
+gerbv is basically known to compile on all system which the above 
+mentioned libraries compile on, basically all flavors of *ix. It
+has been tested on:
+<ul>
+<li> Linux (2.2.18pre21)
+<li> NetBSD/i386 (1.4.1) (getopt_long not available)
+<li> NetBSD/Alpha (1.5.1)
+<li> Solaris (5.7 and 5.8) (getopt_long not available)
+</ul>
 
 <h3>License</h3>
 
-  gerbv and all associated files is placed under the GNU Public 
-  License (GPL) version 2.0.  See the toplevel COPYING file for 
-  more information. <p>
+gerbv and all associated files is placed under the GNU Public 
+License (GPL) version 2.0.  See the toplevel COPYING file for 
+more information. <p>
 
-  Programs and associated files are:<br>
-  Copyright &copy; 2001 by Stefan Petersen and the respective
-  original authors (which are listed in respective files)
+Programs and associated files are:<br>
+Copyright &copy; 2001 by Stefan Petersen and the respective
+original authors (which are listed in respective files)
 
 
 <h3>News</h3>
@@ -112,8 +116,48 @@
 </ul>
 
 
-<h3>gEDA and gerbv Internet resources</h3>
+<h3>Install</h3>
+<ul>
+<h4>By downloading a release</h4>
 
+<ol>
+<li> Download tarballs from <a href="http://prdownloads.sourceforge.net/gerbv">here</a>.
+<li> Expand source by running <code>gzip -dc <filename> | tar xf -</code>
+<li> Change to newly expanded directory 
+<li> Type <code>./configure</code> if you have Guile installed.<br>
+     If not, type <code>./configure --disable-batch</code>
+<li> Type <code>make</code>
+<li> Type <code>make install</code>. Please note that if you want to
+     install it in a system directory you have to <code>su</code> first.
+<li> Test by typing <code>gerbv</code>
+</ol>
+
+
+<h4>By using anonymous CVS</h4>
+
+<ol>
+<li> Login on anonymous CVS:<br>
+     <code>cvs -d:pserver:anonymous@cvs.gerbv.sourceforge.net:/cvsroot/gerbv login </code> (needed only first time).
+<li> Check out source tree:<br>
+     <code>cvs -z3 -d:pserver:anonymous@cvs.gerbv.sourceforge.net:/cvsroot/gerbv co gerbv</code>
+<li> Recreate all build system files:<br>
+     <code>aclocal</code><br>
+     <code>autoheader</code><br>
+     <code>autoconf</code><br>
+     <code>automake --add-missing</code>
+<li> Type <code>./configure</code> if you have Guile installed.<br>
+     If not, type <code>./configure --disable-batch</code>
+<li> Type <code>make</code>
+<li> Type <code>make install</code>. Please note that if you want to
+     install it in a system directory you have to <code>su</code> first.
+<li> Test by typing <code>gerbv</code>
+</ol>
+</ul>
+
+
+<h3>gEDA and gerbv Internet resources</h3>
+<ul>
+  <h4>URL's</h4>
   gerbv Homepage: <a href="http://gerbv.sourceforge.net/">
                    http://gerbv.sourceforge.net/</a><br>
   gEDA Homepage: <a href="http://www.geda.seul.org/">
@@ -141,7 +185,7 @@
 		<code>http://www.geda.seul.org/mailinglist </code><p>
 	</ul>
 	<strong>Many thanks to the SEUL project for hosting gEDA!</strong>
-
+</ul>
 
 
 <h3>Contact information</h3>
