@@ -12,7 +12,11 @@
 
   Gerber Viewer (gerbv) is a viewer for Gerber files. Gerber files
   are generated from PCB CAD system and sent to PCB manufacturers
-  as basis for the manufacturing process. 
+  as basis for the manufacturing process. The standard supported
+  by gerbv is RS-274X. The basic difference between RS-274D (the old
+  standard) and RS-274X is basically the addition of apertures in
+  RS-274X. It might be possible to make an RS-274X fileds out of 
+  an RS-274D file and an aperture list.
 <p>
   The different layers of the PCB are separated into different files. 
   gerbv can load all files at the same time, though it can currently not show 
@@ -70,6 +74,10 @@ original authors (which are listed in respective files)
 
 <h3>News</h3>
 <ul>
+<li> 2001-09-09 : Third release (0.0.3). Available      
+     <a href="http://prdownloads.sourceforge.net/gerbv/gerbv-0.0.3.tar.gz">here</a>.
+     Announcement is readable <a href="ANNOUNCEMENT-0.0.3">here</a>.
+
 <li> 2001-09-02 : The 0.0.2 release missed some files. You can download them here:
 <ul>
 <li> <a href="install-sh">install-sh</a>

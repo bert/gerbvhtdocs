@@ -1,0 +1,43 @@
+
+Hello friends,
+
+it's time for the next release of Gerber Viewer, aka gerbv, 
+the "now it builds...for real"-release.
+
+The 0.0.2 release had serious flaws in the build which basically
+made it not build on other systems than mine. Dan pointed a 
+serious flaw that I sent links in the tarball and I found that 
+it didn't build on Solaris due to a bug in configure.in. 
+
+The only new feature is that the Scheme backend now receives the
+name of the parsed file. 
+
+It is also now possible to follow gerbv even closer
+to the bleeding edge, since all source is now available via
+anonymous cvs. Instructions on how to check out the source from 
+sourceforge anonymous cvs is available on the home page.
+
+Homepage for gerbv is still http://gerbv.sourceforge.net/
+
+To download gerbv goto 
+	http://prdownloads.sourceforge.net/gerbv/
+and grab gerbv-0.0.3.tar.gz
+
+To install the program do
+1. gzip -dc gerbv-0.0.3.tar.gz | tar xf -
+2. cd gerbv-0.0.3
+3. ./configure
+4. make install
+
+Interesting configure options are:
+--help          : Lists all options
+--disable-batch : Disable compilation of Guile/Scheme backends
+--prefix=<dir>  : Install from dir <prefix>
+
+
+What's new in 0.0.3
+
+- Now the files 'missing', 'mkinstalldirs' and 'install-sh' are
+  copied when release is built.
+- configure can run on Solaris (bug sqashed).
+- backends now receive the name of the parsed file.
