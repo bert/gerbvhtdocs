@@ -1,7 +1,7 @@
 Hello friends of gerbv (and all others too, of course)
 
 Time for the twelfth release of the Free Gerber Viewer, aka gerbv,
-the "not-as-stable" release.
+the "errors-in-your-face" release.
 
 There is about two and a half months ago since I made the last release.
 The need for release has decreased since there are less and less 
@@ -19,28 +19,35 @@ don't have a chance to be able to see the error message in that split
 second it appears. Fix that I must.
 
 If that happens you have a commandline switch so you can log all error
-messages to a file. Put -l <logfile> or --log=<logfile>. It's of course
+messages to a file. Use -l <logfile> or --log=<logfile>. It's of course
 all described in the man page.
 
-Then there is this improved millimeter handling. The only example I had
-using millimeter was broken from my point of view so I ask you to use
-it with caution and report all problems to me. Not as tested as I would
-like to.
+Then there is this improved millimeter handling for gerberfiles. The only 
+example I had using millimeter was broken from my point of view so I ask 
+you to use it with caution and report all problems to me. Not as tested 
+as I would like to.
 
 Daniel Dorau has written a short description on how to get Cadsoft's Eagle
-to generate proper drill files. And a small Perl script to accompanion that.
+to generate proper drill files, and a small Perl script to accompanion that.
 It's available from the webpage and in the distribution under doc/eagle.
 
-All layers on and off.
+Martin Sigrand added two buttons; all layers on and all layers off.
+
+Two new options in the popup menus; Swap with Above and Swap with Below.
+Now you can change the order of the presented layers by pushing them
+up or down.
 
 Then there are sleeve of bug fixes too including:
 * Minor compiler warnings using GCC 3.x fixed.
-* G55 implemented. Was actually found in an example in the "specification" .
-* Building on MacOS X. 
+* G55 implemented. Was actually found in an example in the "specification".
+  Reported by Yuri.
+* Building on MacOS X. Patch from Charles Lepple.
 * Some filled polygons could have problems and not being drawn properly.
+  Reported by Chris Ellec and Bruno Schwander.
 * 64-bit compilation warnings fixed.
-* Some (very few, only seen once by me) ccw arcs could be drawn cw.
+* Some ccw arcs could be drawn cw. Reported by Jukka Marin and Charles Lepple.
 * Plus signs in the coordinates of a drill file properly handled.
+  Patch from Dan McMahill.
 
 The man page is update to reflect all changes in the usage of gerbv.
 
