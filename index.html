@@ -79,6 +79,29 @@ has been tested on:
 <li> Solaris (5.7 and 5.8) (getopt_long not available)
 </ul>
 
+
+<h3>Why?</h3>
+
+I saw quite many questions asking for a free viewer of Gerber files for *ix 
+platforms. There are many available for the Windows platform, but apperently
+not so many for *ix. I decided to write one. After some stumbling experiments
+in Scheme, I rewrote it piece by piece to plain C. First version actually
+generated PostScript.
+<p>
+So gerbv will never be targeted for Windows (at least not by me), the 
+"competition" is too tough. If you want something for your Windows machine, go
+search <a href="http://www.google.com/search?q=free+gerber+viewer">google</a>
+(since I don't want to make free advertisment for any particular brand).
+<p>
+Afterwards I have found some other free ones that works under *ix:
+<ul>
+<li><a href="http://gerber2eps.sourceforge.net/">Gerber2eps.</a>
+   Generates Encapsulated PostScript from Gerber files.</li>
+<li><a href="http://www.alphalink.com.au/~seychell/">gerb2tif.</a>
+   Generated TIFF from Gerber files. Also includes a win32 binary for the interested.</li>
+</ul>
+
+
 <h3>License</h3>
 
 gerbv and all associated files is placed under the GNU Public 
@@ -169,6 +192,7 @@ original authors (which are listed in respective files).
 <ul>
 <li> Gerbers definition of layers are ignored, except name and polarity(see above).
 <li> Proper documentation at all except a man page.
+<li> Also have a look at gerbv's <a href="http://sourceforge.net/tracker/?atid=409541&group_id=33921&func=browse">feature request database</a>.
 <li> Surely other things I currently forgotten.
 </ul>
 
