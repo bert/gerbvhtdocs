@@ -1,0 +1,45 @@
+
+Greetings friends,
+
+it's time for the next release of Gerber Viewer, aka gerbv, 
+the "now-it-installs"-release.
+
+No news regarding bugs etc, this release is only to announce
+that the complete build system is in place. To see more exact
+what has been done, see 'What's new in 0.0.2' below. Next step 
+will be to remove the most nagging things, like draw multi 
+quadrant arcs, send along the filename of the parsed file to 
+the Scheme backend and other small things before starting to
+add things.
+
+Homepage for gerbv is still http://gerbv.sourceforge.net/
+
+To download gerbv goto 
+	http://prdownloads.sourceforge.net/gerbv/
+and grab gerbv-0.0.2.tar.gz
+
+To install the program do
+1. gzip -dc gerbv-0.0.2.tar.gz | tar xf -
+2. cd gerbv-0.0.2
+3. ./configure
+4. make install
+
+Interesting configure options are:
+--help          : Lists all options
+--disable-batch : Disable compilation of Guile/Scheme backends
+--prefix=<dir>  : Install from dir <prefix>
+
+
+What's new in 0.0.2
+
+- Automake in use, so now the build system is "complete"
+  - make install, make uninstall etc works
+  - gerbv --batch=<backend> now searches local directory, 
+    $HOME/.gerbv/scheme and ${prefix}/share/gerbv/scheme until it finds
+    a valid backend, ie gerb-<backend>.scm.
+  - backends moved from src to scheme in tarball
+
+- Version flag changed from -v to -V
+
+- Fixed 64-bit build problems thanks to patches from Dan <mcmahill@mtl.mit.edu>
+  He also fixed some other build problems.
