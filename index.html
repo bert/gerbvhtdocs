@@ -107,16 +107,10 @@ to use them with gerbv:
 </ul>
 
 
-<h3>Why?</h3>
+<h3>Competition?</h3>
 
-I saw quite many questions asking for a free viewer of Gerber files for *ix 
-platforms. There are many available for the Windows platform, but apperently
-not so many for *ix. I decided to write one. After some stumbling experiments
-in Scheme, I rewrote it piece by piece to plain C. First version actually
-generated PostScript.
-<p>
-Afterwards I have found some other free ones that works under *ix
-(and also some manipulation programs):
+This is a list of programs for *ix that can view and manipulate Gerber
+files:
 <ul>
 <li><a href="http://gerber2eps.sourceforge.net/">Gerber2eps.</a>
    Generates Encapsulated PostScript from Gerber files.</li>
@@ -136,19 +130,20 @@ Afterwards I have found some other free ones that works under *ix
 
 <h3>Is there going to be windows version?</h3>
 
-Many of the questions I get is if there's going to be a windows version 
-of gerbv. I personally have no machine available that runs windows and 
-absolutely no idea on how windows work. About seven years ago I tried 
-to install NT on a computer. It ended in disaster. I'll never try it again.
-If someone steps up to take the initiative, I welcome patches to make it 
-compile under windows too. Personally, I will never do it.
+The reason I started this project was the lack of Gerber viewers for 
+Linux. But now Juergen Haas has actually made a port of gerbv that is
+available <a href=" http://sourceforge.net/project/showfiles.php?group_id=33921&package_id=131878">here</a>.
+Please note that this is a beta and there might be quirks and problems, but
+it is useable.
 <p>
-In the meantime, <a href="http://www.smtinfo.net/downloadframe.html">here</a>
-is a listing of several free (as in free beer) programs for PCB layout on
-windows.
+I have actually got several indications that the regular Windows Gerber
+viewers are actually too complicated to use. So this might be an alternative
+for you to try out if you find the other programs too complicated to use. 
 <p>
-<b>(Update 2004-09-07)</b>Actually there is something in the pipe, so keep 
-an eye on this area. More information to come.
+If you don't like gerbv there is a list of gerber viewers 
+<a href="http://www.smtinfo.net/downloadframe.html">here</a>. They are
+free as in free beer.
+
 
 <h3>License</h3>
 
@@ -163,6 +158,10 @@ original authors (which are listed in respective files).
 
 <h3>News</h3>
 <ul>
+<li> 2004-10-07 :  A beta of a windows version is available
+     <a href="http://sourceforge.net/project/showfiles.php?group_id=33921&package_id=131878&release_id=273193">here</a>.
+     There is no particular announcement, but please read the release notes.
+
 <li> 2004-05-27 :  0.16 release available 
      <a href="http://prdownloads.sourceforge.net/gerbv/gerbv-0.16.tar.gz">here</a>.
      Announcement is readable <a href="ANNOUNCEMENT-0.16">here</a>.
@@ -281,6 +280,9 @@ original authors (which are listed in respective files).
 <li> Bugs that I want you to help us find. Since gerber is quite a 
      "open-for-your-own-interpretation" standard gerbv has a hard time catching
      up with all CAD-vendors interpretation.
+<li> Project files where you can store the names of a set of loaded files
+     and color of resp. layer so you easily can reload all Gerber files
+     of a project.
 </ul>
 
 <h4>What is missing:</h4>
