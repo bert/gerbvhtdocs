@@ -27,15 +27,7 @@
 <p>
   The different layers of the PCB are separated into different files. 
   gerbv can load all files at the same time and display them "on top 
-  of each other. You can independently turn them on and off.
-<p>
-  gerbv has also a batch feature. By writing a "backend" in Scheme you 
-  can for example generate other file formats or do design rule check.
-  gerbv parses the Gerber file and calls an external function written
-  in Scheme. Since the Scheme implementation is based on Guile, there
-  are more functions available than the ordinary R4RS. If you don't need
-  this batch feature and don't want to install Guile, so you can simply
-  remove this with a flag during configure.
+  of each other". You can independently turn them on and off.
 
 
 <h3>General Resources</h3>
@@ -64,13 +56,15 @@
 
   gerbv is dependent on a couple of different external libraries:
 <ul>
-<li> <a href="http://www.gtk.org/">GTK+</a>, the graphical toolkit (required).
-
-<li><a href="http://www.gnu.org/software/guile/guile.html">Guile</a>, 
-     an embeddable Scheme interpretator (optional). 
+<li><a href="http://www.gtk.org/">GTK+</a>, the graphical toolkit (required).
+<li><a href="http://developer.gnome.org/doc/API/gdk-pixbuf/index.html">GDK-Pixbuf</a>, export of images (optional).
+<li><a href="http://libpng.org/">libpng</a>, needed by GDK-Pixbuf to generate PNGs (optional).
 <li>getopt_long from the GNU project. gerbv can do without getopt_long
     long options to the program will hence not be available (optional).
 </ul>
+Earlier gerbv was known to use Guile. Since release 0.0.9 this has been
+removed. The batch feature and Guile support is removed.
+<br>
 gerbv is basically known to compile on all system which the above 
 mentioned libraries compile on, basically all flavors of *ix. It
 has been tested on:
@@ -94,15 +88,19 @@ original authors (which are listed in respective files).
 
 <h3>News</h3>
 <ul>
-<li> 2002-05-06 : 0.0.8 release availble 
+<li> 2002-07-06 : 0.0.9 release available 
+     <a href="http://prdownloads.sourceforge.net/gerbv/gerbv-0.0.9.tar.gz">here</a>.
+     Announcement is readable <a href="ANNOUNCEMENT-0.0.9">here</a>.
+
+<li> 2002-05-06 : 0.0.8 release available 
      <a href="http://prdownloads.sourceforge.net/gerbv/gerbv-0.0.8.tar.gz">here</a>.
      Announcement is readable <a href="ANNOUNCEMENT-0.0.8">here</a>.
 
-<li> 2002-02-10 : 0.0.7 release availble 
+<li> 2002-02-10 : 0.0.7 release available 
      <a href="http://prdownloads.sourceforge.net/gerbv/gerbv-0.0.7.tar.gz">here</a>.
      Announcement is readable <a href="ANNOUNCEMENT-0.0.7">here</a>.
 
-<li> 2001-12-15 : 0.0.6 release availble 
+<li> 2001-12-15 : 0.0.6 release available 
      <a href="http://prdownloads.sourceforge.net/gerbv/gerbv-0.0.6.tar.gz">here</a>.
      Announcement is readable <a href="ANNOUNCEMENT-0.0.6">here</a>.
 
@@ -150,24 +148,27 @@ original authors (which are listed in respective files).
 <li> Parses a lot of Gerbers, including aperture macros.
 <li> Drill file support(NC drill/Excellon).
 <li> Autodetection of Gerber-or-Excellonfile.
-<li> Panning  and zooming.
+<li> Panning  and zooming (both stepwise and outline).
 <li> Autoscale. Zoom and pan to fit window.
 <li> Several files can be loaded and be shown "on top of each other".
 <li> Different files has different colors.
-<li> Scheme backend.
-<li> Disable backend at configuration time if you don't want to install Guile.
-<li> Start of a simple ps-generating backend.
 <li> Explicit setting of color on layer.
+<li> Explicit setting of color on background.
+<li> Acknowledge layer polarity (paint/scratch/paint).
+<li> A measurement tool so you can do measurement on the image.
+<li> Export image to PNG.
+<li> Possible to reload files which reloads all loaded files. Good when hacking
+     Gerber files.
 </ul>
 
 <h4>What is missing:</h4>
 <ul>
-<li> Gerbers definition of layers are ignored.
-<li> Proper documentation on how to interface the backend.
+<li> Gerbers definition of layers are ignored, except name and polarity(see above).
 <li> Proper documentation at all except a man page.
 <li> Surely other things I currently forgotten.
 </ul>
 
+</ul>
 
 <h3>Install</h3>
 <ul>
@@ -177,8 +178,9 @@ original authors (which are listed in respective files).
 <li> Download tarballs from <a href="http://prdownloads.sourceforge.net/gerbv">here</a>.
 <li> Expand source by running <code>gzip -dc <filename> | tar xf -</code>
 <li> Change to newly expanded directory 
-<li> Type <code>./configure</code> if you have Guile installed.<br>
-     If not, type <code>./configure --disable-batch</code>
+<li> Type <code>./configure</code>.<br>
+     If you want to be able to export PNGs, 
+     type <code>./configure --enable-exportpng</code>
 <li> Type <code>make</code>
 <li> Type <code>make install</code>. Please note that if you want to
      install it in a system directory you have to <code>su</code> first.
@@ -190,7 +192,7 @@ original authors (which are listed in respective files).
 
 <ol>
 <li> Login on anonymous CVS:<br>
-     <code>cvs -d:pserver:anonymous@cvs.gerbv.sourceforge.net:/cvsroot/gerbv login </code> (needed only first time).
+     <code>cvs -d:pserver:anonymous@cvs.gerbv.sourceforge.net:/cvsroot/gerbv login </code> (needed only the first time).
 <li> Check out source tree:<br>
      <code>cvs -z3 -d:pserver:anonymous@cvs.gerbv.sourceforge.net:/cvsroot/gerbv co gerbv</code>
 <li> Recreate all build system files:<br>
@@ -198,8 +200,9 @@ original authors (which are listed in respective files).
      <code>autoheader</code><br>
      <code>autoconf</code><br>
      <code>automake --add-missing</code>
-<li> Type <code>./configure</code> if you have Guile installed.<br>
-     If not, type <code>./configure --disable-batch</code>
+<li> Type <code>./configure</code>.<br>
+     If you want to be able to export PNGs, 
+     type <code>./configure --enable-exportpng</code>
 <li> Type <code>make</code>
 <li> Type <code>make install</code>. Please note that if you want to
      install it in a system directory you have to <code>su</code> first.

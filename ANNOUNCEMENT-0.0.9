@@ -1,0 +1,94 @@
+Hi,
+
+it's time for the next release of Gerber Viewer, aka gerbv, 
+the "no guile problem" release.
+
+There has not been so long time ago since last release. My former 
+employer filed for bancruptcy and I was left without work. Now I got
+me one and I'm back on track. And Anders has gotten up to speed in 
+contributing amazing things to gerbv though he's still looking for a 
+job when he not tending his one-year old or hack gerbv.
+
+Number of bugs that has caused images to be drawn incorrectly starts 
+to get really low. This release is no difference in the bug hunt. A 
+couple of apertures drawn wrong has been fixed, like lines with square
+apertures and rotation of aperture macro primitive 4. But now many extra 
+features starts to get implemented. One of the biggest news is zoom 
+outline and the measurement tools. You can also export the image as PNG,
+thanks to Dino Ghilardi (not compiled in by default currently).
+
+As noted, Guile is no longer default when configuring/compiling gerbv.
+The backend was lagging behind the parser, noone was interested in using
+the backends and Guile installation always gave people headache. If you 
+want Guile, then tell me fast, because next release I also plan to remove 
+all strange defines in the code due to Guile. 
+
+Dinos export-PNG code has added some new dependencies on external 
+libraries. Next release I plan to have this export-PNG in by default 
+as Guile was before. My idea is to change only one library dependency at
+a time. Is this good or bad?
+
+For the next release most of the ideas are in the feature request database. 
+If you have any further ideas, either email me so I can add them or enter 
+them yourself. I have also started a mailinglist. It's very boring, since
+the only traffic is the commit mails. But if you like to bleed, you can 
+follow the progress extremely close.
+
+Comments, patches and suggestions are, as always, very welcome. We use 
+the bug database and feature request database available through sourceforge. 
+Have a look there if you curious what's going on or if you have any idea 
+that you think should be implemented in gerbv.
+
+Homepage for gerbv is still http://gerbv.sourceforge.net/ where bug database,
+feature request database, CVS and mail list are available.
+
+To download gerbv goto 
+	http://prdownloads.sourceforge.net/gerbv/
+and grab gerbv-0.0.9.tar.gz
+
+To install the program do
+1. gzip -dc gerbv-0.0.9.tar.gz | tar xf -
+2. cd gerbv-0.0.9
+3. ./configure
+4. make install
+
+Interesting configure options are:
+--help             : Lists all options
+--enable-batch     : Enable compilation of Guile/Scheme backends
+--enable-exportpng : Enable compilation of export of PNGs
+--prefix=<dir>     : Install from dir <prefix>
+
+
+What's new in 0.0.9
+- Zooming uses parts of current scale and not hardcoded values. The 
+  zooming is more smooth now.
+- Zoom outline: 
+   - Right mouse button gives zoom outline with one corner where you 
+     clicked the mouse and the other where the mouse is at the moment.
+   - If you press shift+right mousebutton you get zoom outline  with 
+     the center where the mouse was when you started.
+  Zoom outline draws two squares: one where you select and one dashed 
+  showing actual zoom area controlled by aspect ratio of your window.
+- A measurement tool so you can do measurements on the gerberfiles.
+  It's controlled by shift and left mousebutton.
+- A statusbar with current position for mousepointer in absoulute 
+  coordinates and the measurement result.
+- Proper handling of layer polarity, also called %LP% or  
+  paint/scratch/paint.
+- When you load a file via the menu it remembers which directory you
+  used and starts in that directory next time you load a file.
+- Dynamically handling of corners in polygons.
+- Reload files. By selecting this menu alternative (or pressing Alt+r) 
+  you reload all loaded files from disk again. Good when hacking and 
+  debugging gerberfiles.
+- It's possible to use gerberfiles with negative coordinates
+- Possible to change the background color.
+- Added export of PNG's submitted by Dino Ghilardi. Currently it's not 
+  default when compiling gerbv, you have to use --enable-exportpng when
+  running configure. The reason is that feature depends on gdk-pixbuf 
+  and libpng and I don't want to make too many dependency changes in 
+  one release.
+- Guile is not compiled in by default. To use that you have to give
+  --enable-batch to configure to get it to work.
+- A sleeve of minor bugfixes.
+- Probably a sleeve of added bugs.
