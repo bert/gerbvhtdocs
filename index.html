@@ -14,10 +14,11 @@
   Gerber Viewer (gerbv) is a viewer for Gerber files. Gerber files
   are generated from PCB CAD system and sent to PCB manufacturers
   as basis for the manufacturing process. The standard supported
-  by gerbv is RS-274X. The basic difference between RS-274D (the old
-  standard) and RS-274X is basically the addition of apertures in
-  RS-274X. It might be possible to make an RS-274X file out of 
-  an RS-274D file and an aperture list.
+  by gerbv is 
+  <a href="http://www.maniabarco.com/transdown/rs274xrevd_e.pdf">RS-274X</a>.
+  The basic difference between RS-274D (the old standard) and RS-274X is 
+  basically the addition of apertures in RS-274X. It might be possible to 
+  make an RS-274X file out of an RS-274D file and an aperture list.
 <p>
   gerbv also supports drill files. The format supported are known under
   names as NC-drill or Excellon. The format is a bit undefined and
@@ -39,7 +40,7 @@
 <li> <a href="http://prdownloads.sourceforge.net/gerbv/">Download the source</a>
 <li> <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/gerbv">
      Browse the CVS repository</a>
-<li> Info gathered on RS-274X <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/gerbv/gerbv/doc/sources.txt?rev=1.6&content-type=text/vnd.viewcvs-markup">here</a>.
+<li> Info gathered on RS-274X <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/gerbv/gerbv/doc/sources.txt?rev=1.7&content-type=text/vnd.viewcvs-markup">here</a>.
 <li> Read the <a href="gerbv-man.html">man page</a> for the current release
 </ul>
 
@@ -112,6 +113,12 @@ Afterwards I have found some other free ones that works under *ix:
    Generated TIFF from Gerber files. Also includes a win32 binary for the interested.</li>
 <li><a href="http://www.wizards.de/phil/java/rs274x.html">Gerber RS-274D/X file viewer in Java.</a> 
    Doesn't seem to work too well. Maybe a start if someone likes to hack Java.
+<li><a href="http://www.swcp.com/~jchavez/gerber2pdf.html">gerber2pdf.</a>
+  A Python script that converts a gerber file 2 pdf. Seems quite advanced.
+<li><a href="http://gbtiler.sourceforge.net/">GBTiler.</a> Not actually a 
+  viewer, but a panelizer as I understand it. Takes several gerber files
+  and puts them together next to each other. Written in Perl.
+
 </ul>
 
 
@@ -215,7 +222,7 @@ original authors (which are listed in respective files).
 
 <h4>What's there:</h4>
 <ul>
-<li> Parses a lot of Gerbers, including aperture macros.
+<li> Parses (and draws of course) a lot of Gerbers, including aperture macros.
 <li> Drill file support(NC drill/Excellon).
 <li> Autodetection of Gerber-or-Excellonfile.
 <li> Panning  and zooming (both stepwise and outline).
@@ -229,6 +236,9 @@ original authors (which are listed in respective files).
 <li> Export image to PNG.
 <li> Possible to reload files which reloads all loaded files. Good when hacking
      Gerber files.
+<li> Bugs that I want you to help us find. Since gerber is quite a 
+     "open-for-your-own-interpretation" standard gerbv has a hard time catching
+     up with all CAD-vendors interpretation.
 </ul>
 
 <h4>What is missing:</h4>
@@ -293,6 +303,27 @@ original authors (which are listed in respective files).
 </ol>
 </ul>
 
+
+<h3>Submitting a patch or addition to gerbv</h3>
+We are interested in all ideas and suggestions regarding gerbv. We also 
+reserve us the right to reject them though. Ideas implemented in source
+code always has a greater chance to make it into the release in a near 
+future.
+<p>
+If you want to implement something for gerbv there is a certain "code
+standard" we try to maintain. That is described in a text file in the
+distribution HACKING. Please read it. And check that your code doesn't
+stand out too much from the rest regarding naming of functions and
+variables.
+<p>
+If you send in a patch <tt>diff</tt> is a very good tool. Before you
+start hacking, make a copy of the original file:<br>
+<tt>cp &lt;file&gt; &lt;file.orig&gt;</tt> for example like 
+<tt>cp &lt;gerbv.c&gt; &lt;gerbv.c.orig&gt;</tt>.<br>
+
+Then use diff as:<br>
+<tt>diff -Naur &lt;file.orig&gt; &lt;file&gt; &gt; &lt;file.diff&gt;</tt><br>
+and send us the diff file.
 
 <h3>gEDA and gerbv Internet resources</h3>
 <ul>
