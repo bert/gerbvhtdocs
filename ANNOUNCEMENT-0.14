@@ -1,0 +1,43 @@
+Greetings fellows!
+
+Time for the fourteenth release of the Free Gerber Viewer, 
+aka gerbv, the "I-feel-ashamed" release.
+
+There are only minor bugfixes that has been around in the
+cvs for long time. It's a bad sign when you get bugreports
+on fixed problems.
+
+The fixes are:
+* Removal of the last inclusions of malloc.h after tips
+  from Charles Lepple.
+* Some patch that fixed a problem for Larry Dolittle that
+  I wasn't able to reproduce.
+* Error messages when running RS274D instead of 
+  "crash-and-burn" (ie segfault).
+
+The development of gerbv has come to a grinding halt since 
+I have found other interesting things to do. If there is
+anyone out there wanting to hack and develop gerbv further,
+please step forward. For instance, one thing gerbv needs 
+is porting to GTK 2.0.
+
+Homepage for gerbv is still http://gerbv.sourceforge.net/ 
+where a bug database, a feature request database, the CVS 
+and a commit mailinglist is available.
+
+To download gerbv goto 
+        http://prdownloads.sourceforge.net/gerbv/
+and grab gerbv-0.14.tar.gz
+
+To install the program do
+1. gzip -dc gerbv-0.14.tar.gz | tar xf -
+2. cd gerbv-0.14
+3. ./configure
+4. make install
+
+Interesting configure options are:
+--help              : Lists all options
+--disable-exportpng : Disable compilation of export of PNGs
+--prefix=<dir>      : Install from dir <prefix>
+--with-maxfiles     : Set maximal number of files (default 20).
+--enable-unit-mm    : Change default unit in status bar to mm from inch.
