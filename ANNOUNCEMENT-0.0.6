@@ -1,0 +1,81 @@
+Hello people
+
+it's time for the next release of Gerber Viewer, aka gerbv, 
+the "all files at once"-release.
+
+Last release I talked about either fixing GUI or aperture 
+macros. It became GUI. The radio buttons on the side have
+now changed to colored checkbuttons, which makes it possible
+to turn on and off different layers. The color on the button 
+reflects the color on the layer. I want to thank my friend 
+Andreas Andersson aka Pitch for actual starting this snowball 
+of changes it became.
+
+To be able to see which file is loaded on which button I have
+implemented tooltips. Hold the mouse marker over a button
+and a tooltip will pop up, showing the filename.
+
+Drill file support is now "embedded". The program now tries
+to automagically determine wheter the file is a gerber- or
+drillfile and parse according to this. The -d is hence 
+removed from the command line. If you experience any problem
+with this, please contact me or Pitch.
+
+I have changed how panning is done. This gave a tremendous 
+speed improvment. Now you can pan painless despite you have
+turned on 19 layers with over 100.000 elements in it. The trick
+is to just copy pixmaps and not redraw the whole image. Unfortunate
+I still have to redraw the image when zooming, so that is still
+slow.
+
+Another speed improvments is parsing; by changing file IO I got
+a speed increase in parsing by two to three times. If you have
+small and few files you probably won't notice a difference.
+
+The only new supported Gerber element is Polygon Area Fill.
+
+You can now zoom in and out with middle button resp. middle button
+plus shift.
+
+There are also many bugs removed and some bugs added. The 
+biggest support with ideas, great (in many ways) gerberfiles and 
+bugreports is from Joachim Jansen. A big thanks to him.
+
+For next release I think I shouldn't promise anything this time.
+But with Christmas closing in you never know what pops up...
+
+Comments, patches and suggestions are, as always, very welcome.
+
+Homepage for gerbv is still http://gerbv.sourceforge.net/
+
+To download gerbv goto 
+	http://prdownloads.sourceforge.net/gerbv/
+and grab gerbv-0.0.6.tar.gz
+
+To install the program do
+1. gzip -dc gerbv-0.0.6.tar.gz | tar xf -
+2. cd gerbv-0.0.6
+3. ./configure
+4. make install
+
+Interesting configure options are:
+--help          : Lists all options
+--disable-batch : Disable compilation of Guile/Scheme backends
+--prefix=<dir>  : Install from dir <prefix>
+
+
+What's new in 0.0.6
+- Turn on and off explicit layers.
+- Color on button reflect color on layer.
+- Automatic detection of drill- or gerber file.
+- Tooltips over buttons to reflect loaded filename.
+- Handles Polygon Area Fill
+- Major rehacking of file IO and pan code to significantly 
+  increase speed.
+- Autoscaling. Loaded gerber files are automagically scaled and
+  panned to fit in window. Also possible to do with loaded files
+  with Zoom/Fit meny option.
+- configure.in enhancement to support package building in Red Hat.
+  Thanks to Wojciech Kazubski for patch.
+- bzero changed to memset, which hopefully is more POSIX (for portability).
+- Loads of bugs squashed and hopefully fewer added.
