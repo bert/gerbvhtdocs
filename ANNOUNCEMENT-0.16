@@ -8,10 +8,10 @@ This time it's not so many bugs found, but a big bunch of features added.
 Notably are:
 * projects: you can save and load setups in what I call projects.
 * GTK+ 2 support: Compiles under GTK+ 2 with the added benfit of
-  `ldd gerbv|wc -l` now returns 24 instead of 14.
+  `ldd gerbv|wc -l` now returns 24 instead of 14. ;-)
 * Now you can invert a layer by the push of button. Basically.
 * When gerber files were defined with omit trailing zeros, gerbv could 
-  parse the very bad. Now it should work better.
+  parse them very bad. Now it should work better.
 
 Projects
 If you load a bunch of files, sort them into a nice order and give them
@@ -39,7 +39,13 @@ deprecated in GTK+ 2 (see log.c).
 Thanks to all patchers and error reporters.
 
 If there is anyone out there wanting to hack and develop gerbv 
-further, please step forward.
+further, please step forward. 
+
+This release has many new features so expect bugs. If you find anything,
+please report them asap. There are currently a couple of known bugs (see
+the buglist on gerbv sourceforge site), but I do this release anyhow. I 
+get patches with respect to previous, and this version and previous starts 
+to differ too much to be really good.
 
 Homepage for gerbv is still http://gerbv.sourceforge.net/ where a bug database,
 a feature request database, the CVS and a commit mailinglist is available.
