@@ -130,6 +130,14 @@ original authors (which are listed in respective files).
 
 <h3>News</h3>
 <ul>
+<li> 2002-10-19 : Release 0.0.10 didn't build proper on architecture other
+     than i386, as discovered by Debians autobuilder. If you get a load of 
+     warnings saying "comparison is always false due to limited range of data 
+     type" you should use 
+     <a href="diffs/gerbv-0.0.10_to_2.diff.gz">this patch</a>. 
+     Copy the file into gerbv-0.0.10 directory and run
+     <code>gzip -dc gerbv-0.0.10_to_2.diff.gz | patch -p0</code> and recompile.
+
 <li> 2002-10-13 : 0.0.10 release available 
      <a href="http://prdownloads.sourceforge.net/gerbv/gerbv-0.0.10.tar.gz">here</a>.
      Announcement is readable <a href="ANNOUNCEMENT-0.0.10">here</a>.
