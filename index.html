@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>gerbv - A Free Gerber Viewer</title>
+<base href="http://gerbv.sourceforge.net/">
+
+</head>
+<body bgcolor="#ffffff">
+
+<center>
+<h1>gerbv - A Free Gerber Viewer</h1>
+</center>
+
+  Gerber Viewer (gerbv) is a viewer for Gerber files. Gerber files
+  are generated from PCB CAD system and sent to PCB manufacturers
+  as basis for the manufacturing process. 
+<p>
+  The different layers of the PCB are separated into different files. 
+  gerbv can load all files at the same time, though it can not show 
+  them at the same time. You have to browse through the different layers
+  with the radio buttons on the right side.
+<p>
+  gerbv has also a batch feature. By writing a "backend" in Scheme you 
+  can for example generate other file formats or do design rule check.
+  gerbv parses the Gerber file and calls an external function written
+  in Scheme. Since the Scheme implementation is based on Guile, there
+  are more functions available than the ordinary R4RS.
+
+
+<h3>Resources</h3>
+
+<ul>
+<li> <a href="http://www.sourceforge.net/projects/gerbv/">Project info page</a>
+<li> <a href="screen_shot1.png">One screenshot available.</a>
+</ul>
+
+<h3>System Requirements</h3>
+
+  gerbv is dependent on a couple of different external libraries:
+<ul>
+<li> <a href="http://www.gtk.org/">GTK+</a>, the graphical toolkit.
+
+<li><a href="http://www.gnu.org/software/guile/guile.html">Guile</a>, 
+     an embeddable Scheme interpretator. 
+<li>getopt_long from the GNU project. gerbv can do without getopt_long
+    long options to the program will hence not be available.
+</ul>
+  gerbv is basically known to compile on all system which the above 
+  mentioned libraries compile on, basically all flavors of *ix. It
+  has been tested on Linux (2.2.18pre21), NetBSD (1.4.1), Solaris 
+  (5.7 and 5.8).
+
+
+<h3>License</h3>
+
+  gerbv and all associated files is placed under the GNU Public 
+  License (GPL) version 2.0.  See the toplevel COPYING file for 
+  more information. <p>
+
+  Programs and associated files are:<br>
+  Copyright &copy; 2001 by Stefan Petersen and the respective
+  original authors (which are listed on the respective files)
+
+
+<h3>gEDA and gerbv Internet resources</h3>
+
+  gerbv Homepage: <a href="http://gerbv.sourceforge.net/">
+                   http://gerbv.sourceforge.net/</a><br>
+  gEDA Homepage: <a href="http://www.geda.seul.org/">
+                  http://www.geda.seul.org/</a><br>
+
+  <h4>Mailing list</h4>
+	To subscribe send an email to majordomo@geda.seul.org  
+	with <em>subscribe geda-dev</em> in the body.<br>
+		
+	To unsubscribe send an email to majordomo@geda.seul.org
+	with <em>unsubscribe geda-dev</em> in the body.<br>
+
+	To send email to the list use the address:<br>
+
+		<code>geda-dev@geda.seul.org</code><p>
+
+	Remember, <em>geda-dev@geda.seul.org</em> is for the actual traffic.<br>  
+	For administrative commands, use <em>majordomo@geda.seul.org</em>.<p>
+
+	The mailing list archive is at:<br>
+
+		<code>http://www.geda.seul.org/mailinglist </code><p>
+
+	<strong>Many thanks to the SEUL project for hosting gEDA!</strong>
+
+
+
+<h3>Contact information</h3>
+<A href="http://sourceforge.net"> 
+<IMG src="http://sourceforge.net/sflogo.php?group_id=33921"
+  width="88" height="31" border="0" alt="SourceForge Logo"></A> <p>
+
+  Stefan Petersen<br>
+  E-mail: <a href="mailto:spe@stacken.kth.se">spe@stacken.kth.se</a><br>
+  Web: <a href="http://gerbv.sourceforge.net/">
+       http://gerbv.sourceforge.net/</a><br>
+
+
+<hr>
+<code> $Id$ </code>
+</body>
+</html>
