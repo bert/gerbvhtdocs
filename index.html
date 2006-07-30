@@ -34,6 +34,9 @@ width="48" height="48" border="0" alt="gerbv Logo"> </A>
   The different layers of the PCB are separated into different files. 
   gerbv can load all files at the same time and display them "on top 
   of each other". You can independently turn them on and off.
+<p>
+  <b>If anyone is interested to takeover this project, please contact
+     Stefan. Else this project will risk to rot away yet again. </b>
 
 
 <h3>General Resources</h3>
@@ -152,12 +155,16 @@ License (GPL) version 2.0.  See the toplevel COPYING file for
 more information. <p>
 
 Programs and associated files are:<br>
-Copyright &copy; 2001, 2002, 2003, 2004 by Stefan Petersen and the respective
-original authors (which are listed in respective files).
+Copyright &copy; 2001, 2002, 2003, 2004, 2005, 2006 by Stefan Petersen 
+and the respective original authors (which are listed in respective files).
 
 
 <h3>News</h3>
 <ul>
+<li> 2006-07-28 :  1.0.2 release available
+     <a href="http://prdownloads.sourceforge.net/gerbv/gerbv-1.0.2.tar.gz">here</a>.
+     Announcement is readable <a href="ANNOUNCEMENT-1.0.2">here</a>.
+
 <li> 2005-01-22 :  1.0.1 release available 
      <a href="http://prdownloads.sourceforge.net/gerbv/gerbv-1.0.1.tar.gz">here</a>.
      Announcement is readable <a href="ANNOUNCEMENT-1.0.1">here</a>.
@@ -308,12 +315,15 @@ original authors (which are listed in respective files).
 <h3>Stable versus unstable</h3>
 Per 2004-12-28 gerbv is split into a stable and one unstable branch.
 The stable branch is something that will always work, but no new features will
-be added. GTK+ 1.2 will continue to work. In the unstable branch GTK+ 1.2 will
-be killed off and new features will be added. But as new features are added,
+be added. Because the increasingly difficulty in supporting GTK+ 1.2, that
+support is removed from 1.0.2.  But as new features are added,
 new bugs will probably also crawl up.
 <br>
 The unstable branch will be the HEAD branch in CVS. The stable branch is 
 has the tag STABLE_1_x_branch.
+<br>
+The current biggest difference is that the unstable version (HEAD) supports
+Pick-n-place files.
 
 <h3>Install</h3>
 <ul>
@@ -341,15 +351,15 @@ has the tag STABLE_1_x_branch.
 
 <ol>
 <li> Login on anonymous CVS (only needed the first time):<br>
-     <code>cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/gerbv login </code>.<br>
+     <code>cvs -d:pserver:anonymous@gerbv.cvs.sourceforge.net:/cvsroot/gerbv login </code>.<br>
      Press Enter when CVS asks for a password.
 <li> Check out the source tree:<br>
-     <code>cvs -z3 -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/gerbv co gerbv</code>
+     <code>cvs -z3 -d:pserver:anonymous@gerbv.cvs.sourceforge.net:/cvsroot/gerbv co gerbv</code>
 <li> Recreate all build system files:<br>
      <code>aclocal</code><br>
      <code>autoheader</code><br>
-     <code>autoconf</code><br>
      <code>automake --copy --add-missing</code><br>
+     <code>autoconf</code><br>
      I have also made a simple script which is called with 
      <code>./rebuild_conf</code> which does all the auto* stuff.
 <li> Type <code>./configure &lt;switches&gt;</code>.<br>
