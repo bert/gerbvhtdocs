@@ -48,7 +48,7 @@ width="48" height="48" border="0" alt="gerbv Logo"> </A>
 <li> <a href="http://prdownloads.sourceforge.net/gerbv/">Download the source</a>
 <li> <a href="http://gerbv.cvs.sourceforge.net/gerbv/gerbv">
      Browse the CVS repository</a>
-<li> Info gathered on RS-274X <a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/gerbv/gerbv/doc/sources.txt?rev=1.7&content-type=text/vnd.viewcvs-markup">here</a>.
+<li> <a href="http://gerbv.cvs.sourceforge.net/gerbv/gerbv/doc/sources.txt?rev=1.7&content-type=text/vnd.viewcvs-markup">Info gathered on RS-274X</a>.
 <li> Read the <a href="gerbv-man.html">man page</a> for the current release
 </ul>
 
@@ -59,8 +59,7 @@ width="48" height="48" border="0" alt="gerbv Logo"> </A>
 <a href="http://packages.debian.org/testing/electronics/gerbv.html">testing</a>
  and 
 <a href="http://packages.debian.org/unstable/electronics/gerbv.html">unstable</a>(Thanks Hamish Moffatt).</li>
-<li> Thanks to Wojciech Kazubski Red Hat packages of gerbv are available 
-<a href="http://www.sp5pbe.waw.pl/~sp5smk/geda.html">here</a> .</li>
+<li> Thanks to Wojciech Kazubski <a href="http://www.sp5pbe.waw.pl/~sp5smk/geda.html">Red Hat packages of gerbv are available</a>.</li>
 <li> NetBSD. It is <a href="ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/cad/gerbv/README.html">available</a> from the NetBSD ports tree (thanks Dan McMahill).</li>
 <li> FreeBSD, in their <a href="http://www.freebsd.org/ports/cad.html">cad ports tree</a>.</li>
 <li> An <a href="gentoo/gerbv-0.13.ebuild">ebuild script</a> from Michael 
@@ -255,17 +254,18 @@ and the respective original authors (which are listed in respective files).
 
 <h3>Submitting a patch or addition to gerbv</h3>
 <ul>
+<li>
 We are interested in all ideas and suggestions regarding gerbv. We also 
 reserve us the right to reject them though. Ideas implemented in source
 code always has a greater chance to make it into the release in a near 
 future.
-<p>
+<li>
 If you want to implement something for gerbv there is a certain "code
 standard" we try to maintain. That is described in a text file in the
 distribution HACKING. Please read it. And check that your code doesn't
 stand out too much from the rest regarding naming of functions and
 variables.
-<p>
+<li>
 If you send in a patch <tt>diff</tt> is a very good tool. Before you
 start hacking, make a copy of the original file:<br>
 <tt>cp &lt;file&gt; &lt;file.orig&gt;</tt> for example like 
@@ -274,7 +274,7 @@ start hacking, make a copy of the original file:<br>
 Then use diff as:<br>
 <tt>diff -Naur &lt;file.orig&gt; &lt;file&gt; &gt; &lt;file.diff&gt;</tt><br>
 and send us the diff file.
-<p>
+<li>
 <b>Important!</b> Please base your patch against the latest 
 version of the trunk held in CVS!  Do not
 base your patch against the released branch since the project maintainers 
@@ -286,14 +286,13 @@ mailing list.
 
 <h3>gEDA and gerbv Internet resources</h3>
 <ul>
-  <h4>URLs</h4>
-  gerbv Homepage: <a href="http://gerbv.sourceforge.net/">
+  <li>gerbv Homepage: <a href="http://gerbv.sourceforge.net/">
                    http://gerbv.sourceforge.net/</a><br>
-  gEDA Homepage: <a href="http://www.geda.seul.org/">
+  <li>gEDA Homepage: <a href="http://www.geda.seul.org/">
                   http://www.geda.seul.org/</a><br>
 
-  <h4>Mailing list</h4>
-  Gerber Viewer will use the ordinary gEDA mailing list, hosted by
+    <li>Mailing list:  
+  Gerber Viewer uses the ordinary gEDA mailing list, hosted by
   <a href="http://seul.org">Simple End User Linux, SEUL</a><p>
 
 	To subscribe send an email to majordomo (AT) geda (DOT) seul (DOT) org  
@@ -433,7 +432,7 @@ mailing list.
 <li> 2001-11-21 : 0.0.5 had some "fixes" which broke displaying some pads.
      So if you miss a bunch of pads when displaying your Gerbers, try
      <a href="diffs/gerber.c.diff">this</a> patch. Copy the file into
-     the src directory, run <code>patch < gerber.c.diff</code> and rerun 
+     the src directory, run <code>patch &lt; gerber.c.diff</code> and rerun 
      make and make install.
 
 <li> 2001-11-14 : Fifth relase (0.0.5) Available      
