@@ -1,0 +1,48 @@
+Hello!
+
+This is to announce the fourth release in the stable branch of
+gerbv, 1.0.3.
+
+This release represents a point release incorporating a few patches made
+against the 1.0.X source over the last 1 1/2 years.  Specific updates
+include:
+
+* Incorporate changes from Joost Witteveen to support extended 
+  %SR% commands.
+* Fix endless loop bug when gerbv encountered an unknown
+  % code.  Patch from Joost Witteveen.
+* Fixed initial scale setting for %MOMM% Gerber files.
+  Patch from Joost Witteveen.
+* Fixed format for small drillfiles.  Patch from Trevor Blackwell.
+* Fix setting of the initial window size when the screen
+  is larger than the display. Patch from David Carr.
+
+As currently planned, this release is the last release of the 1.0.X series.
+With this release, maintainership of gerbv has broadened to include several
+more members of the gEDA project (http://geda.seul.org/).  This
+places gerbv on a good footing for continued active developement.
+Moving forward, gerbv will begin to make use of the cairo graphics library (if
+it is available on your system).  Expect to see other changes as gerbv moves
+to the 1.1 series! 
+
+The homepage for gerbv still lives on SourceForge: 
+http://gerbv.sourceforge.net/.
+There you will find a bug database,
+a feature request database, the CVS repo and a commit mailinglist.
+
+To download gerbv-1.0.3 goto 
+        http://prdownloads.sourceforge.net/gerbv/
+and grab gerbv-1.0.3.tar.gz
+
+To install gerbv do this:
+1. tar zxf gerbv-1.0.3.tar.gz
+2. cd gerbv-1.0.3
+3. ./configure
+4. make install
+
+Interesting configure options are:
+--help              : Lists all options
+--disable-exportpng : Disable compilation of export of PNGs
+--prefix=<dir>      : Install to dir <prefix>
+--with-maxfiles     : Set maximal number of files (default 20).
+--enable-unit-mm    : Change default unit in status bar to mm from inch.
