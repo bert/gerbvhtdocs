@@ -15,31 +15,40 @@ width="48" height="48" border="0" alt="gerbv Logo"> </A>
 <h1>gerbv - A Free Gerber Viewer</h1>
 </center>
 <p>  
-  gerbv is a viewer for Gerber files.   It is one of the utilities
+  gerbv is a viewer for Gerber (RS-274X) files.   It is one of the utilities
   affiliated with the <a href="http://geda.seul.org/">gEDA</a> project.
 <p>  
   Gerber files
-  are generated from PCB CAD system and sent to PCB manufacturers
-  as basis for the manufacturing process. The standard supported
+  are generated from PCB CAD systems and sent to PCB manufacturers
+  as the basis for the manufacturing process. The standard supported
   by gerbv is 
-  <a href="docs/rs274xrevd_e.pdf">RS-274X</a>.
+  <a href="docs/rs274xrevd_e.pdf">RS-274X</a>.  <b>Note that gerbv will
+  not display RS-274D files!</b>
   The basic difference between RS-274D (the old standard) and RS-274X is 
-  basically the addition of apertures in RS-274X. It might be possible to 
-  make an RS-274X file out of an RS-274D file and an aperture list.
+  the addition of apertures in RS-274X. If you have an RS-274D file,
+  you need to convert it to RS-274X before viewing it with gerbv.  
+  Fortunately, almost all PCB layout programs output RS-274X nowadays.
 <p>
-  gerbv also supports drill files. The format supported are known under
-  names as NC-drill or Excellon. The format is a bit undefined and
-  different EDA-vendors implement it different. But basically you need
+  gerbv also supports drill files. The format supported is known under
+  such names as NC-drill or Excellon. The format is a bit undefined, and
+  different EDA-vendors implement it differently.  But basically you need
   to have the tools definition in the file, then the parser is quite
   tolerant. The different holes are shown as dots in the (scaled) correct
   size.
 <p>
+  Finally, gerbv will also display many pick-and-place files.  To 
+  view a pick-and-place file with gerbv, the file should hold X, Y, rotation,
+  and placement side data (XYRS), as well as the refdes of 
+  each component to be placed.  
+  The data should be held in a comma-separated ASCII (.csv) file.
+<p>  
   The different layers of the PCB are separated into different files. 
   gerbv can load all files at the same time and display them "on top 
   of each other". You can independently turn them on and off.  Other features
   include the ability to change the displayed stackup (i.e. move layers
   up and down), save a project file that lists a collection of gerber files
-  and associated color setup for later use, and a measurement tool.
+  and associated color setup for later use, and a measurement tool.  
+  Finally, you may export your files to .pdf, .ps, .png, and .svg format. 
 <p>
 
 
@@ -85,15 +94,16 @@ the "save to PNG" option, to VMS.
 <li><a href="http://libpng.org/">libpng</a>, needed by GDK-Pixbuf to generate PNGs (optional).
 <li>getopt_long from the GNU project. gerbv can do without getopt_long
     long options to the program will hence not be available (optional).
+<li><a href="http://cairographics.org/">Cairo</a>, the graphics library (optional).
 </ul>
 Earlier gerbv was known to use Guile. Since release 0.0.9 this has been
 removed. The batch feature and Guile support is removed.
 <br>
-gerbv is basically known to compile on all system which the above 
+gerbv is known to compile on all system which the above 
 mentioned libraries compile on, basically all flavors of *ix. It
 has been tested on:
 <ul>
-<li> Linux (2.2/2.4)
+<li> Linux (2.2/2.4/2.6)
 <li> NetBSD/i386 (1.4.1) (getopt_long not available)
 <li> NetBSD/Alpha (1.5.1)
 <li> Solaris (5.7 and 5.8) (getopt_long not available)
@@ -162,8 +172,6 @@ Copyright &copy; 2001, 2002, 2003, 2004, 2005, 2006 by Stefan Petersen
 and the respective original authors (which are listed in respective files).
 
 
-
-
 <h3>Status</h3>
 <ul>
 
@@ -171,21 +179,19 @@ and the respective original authors (which are listed in respective files).
 <ul>
 <li> Parses (and draws of course) a lot of Gerbers, including aperture macros.
 <li> Drill file support(NC drill/Excellon).
-<li> Autodetection of Gerber-or-Excellonfile.
+<li> Pick-and-place file support (.csv format).
+<li> Autodetection of Gerber, drill, or pick-place file type upon readin.
 <li> Panning  and zooming (both stepwise and outline).
 <li> Autoscale. Zoom and pan to fit window.
 <li> Several files can be loaded and be shown "on top of each other".
-<li> Different files has different colors.
+<li> Different files have different colors.
 <li> Explicit setting of color on layer.
-<li> Explicit setting of color on background.
 <li> Acknowledge layer polarity (paint/scratch/paint).
 <li> A measurement tool so you can make measurements on the image.
-<li> Export image to PNG.
+<li> Export image to PNG, .ps, .pdf, .svg (cairo version only).
+<li> Complex layer operations (e.g. knockout).
 <li> Possible to reload files which reloads all loaded files. Good when hacking
      Gerber files.
-<li> Bugs that I want you to help us find. Since gerber is quite a 
-     "open-for-your-own-interpretation" standard gerbv has a hard time catching
-     up with all CAD-vendors interpretation.
 <li> Project files where you can store the names of a set of loaded files
      and color of resp. layer so you easily can reload all Gerber files
      of a project.
@@ -193,10 +199,9 @@ and the respective original authors (which are listed in respective files).
 
 <h4>What is missing:</h4>
 <ul>
-<li> Complex layer operations (like knockout) are ignored.
 <li> Proper documentation at all except a very good <a href="gerbv-man.html">man page</a>.
 <li> Also have a look at gerbv's <a href="http://sourceforge.net/tracker/?atid=409541&group_id=33921&func=browse">feature request database</a>.
-<li> Surely other things I currently forgotten.
+<li> Not much else.....
 </ul>
 
 </ul>
@@ -213,9 +218,14 @@ and the respective original authors (which are listed in respective files).
 <li> Type <code>./configure &lt;switches&gt;</code>.<br>
      The following (gerbv) switches are available to configure:
      <ul>
-     <li><code>--disable-exportpng</code>: If you want to turn off export of PNGs 
+     <li><code>--disable-exportpng</code>: If you want to turn off export of
+	       PNGs.  Use this if you don't have libpng installed on your system. 
+     <li><code>--disable-cairo</code>: Gerbv uses GDK for graphics.  
+               Use this if you don't have cairo installed on your system. 
      <li><code>--with-maxfiles=&lt;number&gt;</code>: Maximum number of simultaneously loaded files (default 20).
-     <li><code>--enable-unit-mm</code>: If you want millimeter as default setting for measurement tool.
+     <li><code>--enable-unit-mm</code>: If you want millimeter as default
+	       setting for measurement tool.  (mm are available, but not the
+	       default, if you do not set this.)
      </ul>
 <li> Type <code>make</code>
 <li> Type <code>make install</code>. Please note that if you want to
@@ -278,8 +288,8 @@ Then use diff as:<br>
 <tt>diff -Naur &lt;file.orig&gt; &lt;file&gt; &gt; &lt;file.diff&gt;</tt><br>
 and send us the diff file.
 <li>
-<b>Important!</b> Please base your patch against the latest 
-version of the trunk held in CVS!  Do not
+<b>Important!</b> Please base your patch against the <b>latest 
+version of the trunk</b> held in CVS!  Do not
 base your patch against the released branch since the project maintainers 
 do not have lots of time to merge your patch into the trunk if it does not 
 apply cleanly to the trunk.  If you have questions about submitting patches, 
