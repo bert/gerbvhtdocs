@@ -1,0 +1,74 @@
+Hello!
+
+This is to announce the release of gerbv-2.0.0!  Gerbv is an open source
+Gerber file (RS-274X only) viewer for Linux and other unix flavors.  Besides
+viewing Gerbers, you may also view Excellon drill files as well as XYRS
+(pick-place) files.  For more information, browse to gerbv's web site: 
+
+http://gerbv.sourceforge.net/
+
+Gerbv is allied with the gEDA Project, an open-source collaborative
+which has produced an end-to-end tool chain for PCB design on Linux and
+other unices.  The gEDA Project's website is here:
+
+http://geda.seul.org/
+
+Gerbv release 2.0.0 represents a a whole new look for gerbv.  Most
+importantly, the layer control GUI has been made much more powerful through
+the outstanding work of Julian Lamb.  Julian has also re-worked the GUI's
+button and menus to make them more  convenient to use.  We are certain that
+you  will find gerbv-2.0.0 even easier to use than before because of Julian's
+amazing work! 
+
+Other changes include: 
+
+* Julian Lamb incorporated the cairo graphics library into gerbv,
+  thereby enabling export to a variety of different output file
+  formats, including PDF, PS, SVG, and PNG.  
+  (GDK rendering remains available as a configure option for
+  older Linux systems.)
+* Cairo rendering also supports "transparency mode", showing you
+  which layers are underneath other layers.
+* Drill parser rewrite by Joerg Wunsch giving better support for
+  internationalization and formats.
+* Added report windows showing statistics of Gerber and 
+  drill codes used (as well as CAM errors) by Stuart Brorson.
+* Parser improvements from Stefan Petersen and Julian Lamb.
+* Aperture handling improvements from Stefan Petersen.
+* A new unit test suite (and nightly test runs) by Dan McMahill.
+* Improved autodetection of file-type by Stuart Brorson.
+* Improvements in the graphical rendering of pick-and-place files.
+* Export of images from the command line (cairo only).
+* Complete implementation of the Gerber spec.
+* Open multiple layers at once in File->Open dialog.
+
+Gerbv's homepage is on SourceForge:
+
+        http://gerbv.sourceforge.net/.
+
+There you will find a bug database, a feature request database, the CVS repo
+and a commit mailinglist.  
+
+To download gerbv-2.0.0, go to 
+
+        http://prdownloads.sourceforge.net/gerbv/
+
+and grab gerbv-2.0.0.tar.gz
+
+To install gerbv do this:
+1. tar zxf gerbv-2.0.0.tar.gz
+2. cd gerbv-2.0.0
+3. ./configure
+4. make && make install
+
+Interesting configure options are:
+--help              : Lists all configure options.
+--disable-cairo     : Use GDK only for graphics rendering.
+--disable-exportpng : Disable compilation of export of PNGs.
+--prefix=<dir>      : Install to dir <prefix>.
+--with-maxfiles     : Set maximal number of files (default 20).
+--enable-unit-mm    : Change default unit in status bar to mm from inch.
+
+Thank you for using gerbv-2.0.0!
+
+                              -- The gerbv team
