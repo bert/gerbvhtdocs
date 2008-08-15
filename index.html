@@ -1,224 +1,167 @@
 <html>
 <head>
-<title>gerbv - A Free Gerber Viewer</title>
+<title>gerbv - A Free/Open Source Gerber Viewer</title>
 <base href="http://gerbv.sourceforge.net/">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="/favicon.ico">
 </head>
-<body bgcolor="#ffffff">
+
+<body lang="EN-US" background="circuit_tile.gif"
+link="blue" vlink="purple" style="">
 
 <center>
 <A href="http://gerbv.sourceforge.net/gerbv-icon-1.png"> 
 <IMG src="http://gerbv.sourceforge.net/gerbv-icon-1.png" 
 width="48" height="48" border="0" alt="gerbv Logo"> </A> 
 
-<h1>gerbv - A Free Gerber Viewer</h1>
+<h1>gerbv - A Free/Open Source Gerber Viewer</h1>
 </center>
 <p>  
-  Gerbv is a viewer for Gerber (RS-274X) files.   It is one of the utilities
-  affiliated with the <a href="http://geda.seul.org/">gEDA</a> project.
+Gerbv is a viewer for Gerber (RS-274X) files.  Gerbv is a 
+native Linux application, and it runs on many common unix platforms.
+Gerbv is 
+<a href="http://www.gnu.org/philosophy/free-sw.html">free</a>/
+<a href="http://www.opensource.org/docs/osd">open-source</a> software; 
+you may download the source code
+from 
+<a href="http://sourceforge.net/project/showfiles.php?group_id=33921">this page</a>.
+It is one of the utilities 
+affiliated with the <a href="http://www.geda.seul.org/">gEDA</a> project,
+an umbrella organization dedicated to producing free software tools for
+electronic design.
+The latest official gerbv release is version 2.0.1.
+</p>
+
+<center>
+<A href="./GerbvScreenshot.png"> 
+<IMG src="./GerbvScreenshotThumb.png" 
+</a>
+</center>
+
+<h2>About Gerber files</h2>
 <p>  
-  Gerber files
-  are generated from PCB CAD systems and sent to PCB manufacturers
-  as the basis for the manufacturing process. The standard supported
-  by gerbv is 
-  <a href="docs/rs274xrevd_e.pdf">RS-274X</a>.  <b>Note that gerbv will
-  not display RS-274D files!</b>
-  The basic difference between RS-274D (the old standard) and RS-274X is 
-  the addition of apertures in RS-274X. If you have an RS-274D file,
-  you need to convert it to RS-274X before viewing it with gerbv.  
-  Fortunately, almost all PCB layout programs output RS-274X nowadays.
+<a href="http://en.wikipedia.org/wiki/Gerber_File">Gerber files</a>
+are typically output by a 
+<a href="http://en.wikipedia.org/wiki/Electronic_design_automation">PCB CAD</a> tool
+(such as the gEDA Project's 
+<a href="http://pcb.sourceforge.net/">PCB</a>),
+and are sent to a PCB manufacturer who uses the files to 
+for manufacturing <a
+href="http://en.wikipedia.org/wiki/Printed_circuit_board">
+Printed Circuit Boards (PCBs)</a>.  
+</p>
 <p>
-  Gerbv also supports drill files. The format supported is known under
-  such names as NC-drill or Excellon. The format is a bit undefined, and
-  different EDA-vendors implement it differently.  But basically you need
-  to have the tools definition in the file, then the parser is quite
-  tolerant. The different holes are shown as dots in the (scaled) correct
-  size.
+There are two standards defining 
+Gerber files:  An old one called
+RS-274D, and a newer one called RS-274X.  Gerber files generated in
+the old format (RS-274D) lack aperture information, which must be
+supplied separately.  The new standard (RS-274X) embeds aperture
+information into the file.   The RS-274X standard is described in 
+<a href="docs/rs274xrevd_e.pdf">this document</a>.  
+<b>Note:  Gerbv displays RS-274X files!  Gerbv will not display RS-274D files!</b>
+When you create Gerber files using
+your PCB tool make sure you export RS-274X files if you want to view
+the files with gerbv.
+</p>
 <p>
-  Finally, gerbv will also display many pick-and-place files.  To 
-  view a pick-and-place file with gerbv, the file should hold X, Y, rotation,
-  and placement side data (XYRS), as well as the refdes of 
-  each component to be placed.  
-  The data should be held in a comma-separated ASCII (.csv) file.
-<p>  
-  The different layers of the PCB are separated into different files. 
-  gerbv can load all files at the same time and display them "on top 
-  of each other". You can independently turn them on and off.  Other features
-  include the ability to change the displayed stackup (i.e. move layers
-  up and down), save a project file that lists a collection of gerber files
-  and associated color setup for later use, and a measurement tool.  
-  Finally, you may export your files to .pdf, .ps, .png, and .svg format. 
+In the Gerber format, the different layers of a PCB (e.g. top silk,
+top metal, interior layers, etc.) are held in separate files.  Information about the
+PCB's stackup is <b>not</b> captured by Gerber files; it is up to the user to 
+supply this information to gerbv, and to his PCB manufacturer.
+</p>
+
+
+<h2>Gerbv's featureset</h2>
 <p>
-
-
-<h3>General Resources</h3>
-
+In summary, gerbv supports the following features:
 <ul>
-<li> <a href="http://www.sourceforge.net/projects/gerbv/">Project info page</a>
-<li> <a href="http://sourceforge.net/project/screenshots.php?group_id=33921">Sceenshots.</a>
-<li> <a href="http://prdownloads.sourceforge.net/gerbv/">Download the source</a>
-<li> <a href="http://gerbv.cvs.sourceforge.net/gerbv/gerbv">
-     Browse the CVS repository</a>
-<li> <a href="http://gerbv.cvs.sourceforge.net/gerbv/gerbv/doc/sources.txt?rev=1.7&content-type=text/vnd.viewcvs-markup">Info gathered on RS-274X</a>.
-<li> Read the <a href="gerbv-man.html">man page</a> for the current release
-</ul>
-
-<h3>Packaging and porting</h3>
-<ul>
-<li> Debian package. Available in both 
-<a href="http://packages.debian.org/stable/electronics/gerbv.html">stable</a>,
-<a href="http://packages.debian.org/testing/electronics/gerbv.html">testing</a>
- and 
-<a href="http://packages.debian.org/unstable/electronics/gerbv.html">unstable</a>(Thanks Hamish Moffatt).</li>
-<li> Thanks to Wojciech Kazubski <a href="http://www.sp5pbe.waw.pl/~sp5smk/geda.html">Red Hat packages of gerbv are available</a>.</li>
-<li> NetBSD. It is <a href="ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/cad/gerbv/README.html">available</a> from the NetBSD ports tree (thanks Dan McMahill).</li>
-<li> FreeBSD, in their <a href="http://www.freebsd.org/ports/cad.html">cad ports tree</a>.</li>
-<li> An <a href="gentoo/gerbv-0.13.ebuild">ebuild script</a> from Michael 
-Ihde for <a href="http://www.gentoo.org/">Gentoo Linux</a> 
-(it is now actually a steady member of the Gentoo package list).
-<li>Charles Lepple has compiled the <a href="http://geda.seul.org/">gEDA 
-suite</a> to MacOS X using <a href="http://fink.sourceforge.net/">fink</a>.
-<a href="http://www.ghz.cc/charles/fink/#gerbv">Here</a> is how he did it.
-<li>Peter Ljungberg reports that he has managed to compile gerbv, including
-the "save to PNG" option, to VMS.
-</ul>
-
-
-<h3>System Requirements</h3>
-
-  gerbv is dependent on a couple of different external libraries:
-<ul>
-<li><a href="http://www.gtk.org/">GTK+</a>, the graphical toolkit (required).
-<li><a href="http://developer.gnome.org/doc/API/gdk-pixbuf/index.html">GDK-Pixbuf</a>, export of images (optional).
-<li><a href="http://libpng.org/">libpng</a>, needed by GDK-Pixbuf to generate PNGs (optional).
-<li>getopt_long from the GNU project. gerbv can do without getopt_long
-    long options to the program will hence not be available (optional).
-<li><a href="http://cairographics.org/">Cairo</a>, the graphics library (optional).
-</ul>
-Earlier gerbv was known to use Guile. Since release 0.0.9 this has been
-removed. The batch feature and Guile support is removed.
-<br>
-gerbv is known to compile on all system which the above 
-mentioned libraries compile on, basically all flavors of *ix. It
-has been tested on:
-<ul>
-<li> Linux (2.2/2.4/2.6)
-<li> NetBSD/i386 (1.4.1) (getopt_long not available)
-<li> NetBSD/Alpha (1.5.1)
-<li> Solaris (5.7 and 5.8) (getopt_long not available)
-</ul>
-
-
-<h3>Support</h3>
-An attempt to gather information on different CAD-programs and how
-to use them with gerbv:
-<ul>
-<li>Cadsoft's Eagle doesn't generate Excellon/drill files that gerbv likes.
-    <a href="http://gerbv.sourceforge.net/eagle/eagle2exc.html">Here's</a>
-    how to solve it with a Perl script.<br>
-    <b>Update 2004-09-07</b> This is not true with later releases of Eagle.
-    Uwe Bonnes reports that since about release 4.11r12 (2004-03-15) things
-    seems to have been implemented properly.
-<li>To convert an RS274D with an external aperture list to an RS274X Larry Doolittle
-    <a href="http://archives.seul.org/geda/dev/Sep-2004/msg00003.html">described</a>
-     a <a href="pads-conv.pl">short perl script</a> in an email. Ormund Williams 
-     tried to use it, but had to do some 
-    <a href="http://archives.seul.org/geda/user/Apr-2008/msg00138.html">slight modifications</a>
-    to make it work for him.
-</ul>
-
-
-<h3>Competition?</h3>
-
-This is a list of programs for *ix that can view and manipulate Gerber
-files:
-<ul>
-<li><a href="http://gerber2eps.sourceforge.net/">Gerber2eps.</a>
-   Generates Encapsulated PostScript from Gerber files.</li>
-<li><a href="http://members.optusnet.com.au/~eseychell/">gerb2tif.</a>
-   Generated TIFF from Gerber files. Also includes a win32 binary for the interested (new URL 20031231).</li>
-<li><a href="http://www.wizards.de/phil/java/rs274x.html">Gerber RS-274D/X file viewer in Java.</a> 
-   Doesn't seem to work too well. Maybe a start if someone likes to hack Java.
-<li><a href="http://www.swcp.com/~jchavez/gerber2pdf.html">gerber2pdf.</a>
-  A Python script that converts a gerber file 2 pdf. Seems quite advanced.
-<li><a href="http://gbtiler.sourceforge.net/">GBTiler.</a> Not actually a 
-  viewer, but a panelizer as I understand it. Takes several gerber files
-  and puts them together next to each other. Written in Perl.
-<li><a href="http://claymore.engineer.gvsu.edu/~steriana/Python/gerbmerge/">
-  GerbMerge</a> is also a panelizer, but written in Python.
-</ul>
-
-
-<h3>Is there going to be windows version?</h3>
-
-The reason I started this project was the lack of Gerber viewers for 
-Linux. But now Juergen Haas has actually made a port of gerbv that is
-available <a href=" http://sourceforge.net/project/showfiles.php?group_id=33921&package_id=131878">here</a>.
-Please note that this is a beta and there might be quirks and problems, but
-it is useable.
-<p>
-I have actually got several indications that the regular Windows Gerber
-viewers are actually too complicated to use. So this might be an alternative
-for you to try out if you find the other programs too complicated to use. 
-<p>
-If you don't like gerbv there is a list of gerber viewers 
-<a href="http://www.smtinfo.net/downloadframe.html">here</a>. They are
-free as in free beer.
-
-
-<h3>License</h3>
-
-gerbv and all associated files is placed under the GNU Public 
-License (GPL) version 2.0.  See the toplevel COPYING file for 
-more information. <p>
-
-Programs and associated files are:<br>
-Copyright &copy; 2001, 2002, 2003, 2004, 2005, 2006 by Stefan Petersen 
-and the respective original authors (which are listed in respective files).
-
-
-<h3>Status</h3>
-<ul>
-
-<h4>What's there:</h4>
-<ul>
-<li> Parses (and draws of course) a lot of Gerbers, including aperture macros.
-<li> Drill file support(NC drill/Excellon).
-<li> Pick-and-place file support (.csv format).
-<li> Autodetection of Gerber, drill, or pick-place file type upon readin.
-<li> Panning  and zooming (both stepwise and outline).
-<li> Autoscale. Zoom and pan to fit window.
-<li> Several files can be loaded and be shown "on top of each other".
-<li> Different files have different colors.
-<li> Explicit setting of color on layer.
-<li> Acknowledge layer polarity (paint/scratch/paint).
-<li> A measurement tool so you can make measurements on the image.
-<li> Export image to PNG, .ps, .pdf, .svg (cairo version only).
-<li> Complex layer operations (e.g. knockout).
+<li>Runs on Linux (Linux native).</li>
+<li>Displays RS-274X files.  (Does <b>not</b> display RS-274D files)</li>
+<li>Handles aperture macros with up to 10 levels of recursion.</li>
+<li>Displays many different drill file formats.  In particular, Excellon drill
+files will be displayed.  Other drill files with similar syntax will also display.</li>
+<li>Displays well-formed pick-and-place files.  Pick-place files
+should contain XYRS (X, Y, Rotation, placement Side) information, and
+be held in a comma-separated ASCII (.csv) format.</li>
+<li> Autodetection of Gerber, drill, or pick-place file type upon
+readin.</li>
+<li>When built using the <a href="http://www.cairographics.org/">Cairo</a>
+rendering engine, gerbv can display Gerber layers in
+"semi-transparent" mode, making it easy to visualize your board's
+stack up.</li>
+<li>Gerbv provides facilities for analyzing and validating your Gerber
+file's syntax.  This can be useful in situations in which you are
+having problems in the CAM stage of manufacturing your PC Board (i.e.
+when your manufacturer is having problems with your files).
+</li>
+<li>When built using <a href="http://www.cairographics.org/">Cairo</a>,
+gerbv allows for limited Gerber editing.  (Currently limited to
+object deletion.)</li>
+<li> Panning  and zooming (both stepwise and outline).</li>
+<li> Autoscale. Zoom and pan to fit window.</li>
+<li> Several files can be loaded and be shown "on top of each other".</li>
+<li> Use may turn display of layers on and off independently.</li>
+<li> Use may set layer colors independently.</li>
+<li> Acknowledge layer polarity (paint/scratch/paint).</li>
+<li> A measurement tool so you can make measurements on the image.</li>
+<li> Export image to PNG, .ps, .pdf, .svg (cairo version only).</li>
+<li> Complex layer operations (e.g. knockout).</li>
 <li> Possible to reload files which reloads all loaded files. Good when hacking
-     Gerber files.
+     Gerber files.</li>
 <li> Project files where you can store the names of a set of loaded files
      and color of resp. layer so you easily can reload all Gerber files
-     of a project.
+     of a project.</li>
 </ul>
+</p>
 
-<h4>What is missing:</h4>
+<h2>Obtaining and installing gerbv</h2>
+<p>
+Gerbv is targeted to run on Linux and other unix variants.  
+Gerbv is now carried in most of the major Linux distribution's software repositories.
+Therefore, most people will want to
+install gerbv using their favorite package tool (such as yum, apt-get,
+etc.)  You can get installation files from the following places:
 <ul>
-<li> Proper documentation at all except a very good <a href="gerbv-man.html">man page</a>.
-<li> Also have a look at gerbv's <a href="http://sourceforge.net/tracker/?atid=409541&group_id=33921&func=browse">feature request database</a>.
-<li> Not much else.....
+<li><a href="http://packages.debian.org/search?keywords=gerbv">Debian package</a></li>
+<li><a href="http://packages.ubuntu.com/hardy/gerbv">Ununtu package</a></li>
+<li>Fedora/RedHat RPMs are available from the common Fedora mirrors.  Gerbv is also included in the 
+<a href="http://chitlesh.fedorapeople.org/FEL/">
+Fedora Electronics Lab.</a> live CD.  More information about installing on Fedora is 
+available on the 
+<a href="http://www.geda.seul.org/wiki/geda:fedora_rpm_installation">gEDA Wiki</a>.
+</li>
+<li><a href="http://download.opensuse.org/repositories/home:/werner2101/openSUSE_10.2/src/">
+SuSE RPMs.</a>  More information about installing on SuSE is available 
+on the <a href="http://www.geda.seul.org/wiki/geda:suse_rpm_installation">gEDA Wiki.</a>
+</li>  
+<li> NetBSD. It is <a href="ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/cad/gerbv/README.html">available</a> from the NetBSD ports tree (thanks Dan McMahill).</li>
+<li> FreeBSD, in their <a href="http://www.freebsd.org/ports/cad.html">cad ports tree</a>.</li>
+<li>Charles Lepple has built gerbv on the Mac OSX using 
+<a href="http://fink.sourceforge.net/">fink</a>.
+His fink packages and other installation information 
+are available <a href="http://www.ghz.cc/charles/fink/#gerbv">here</a>.
 </ul>
+</p>
 
-</ul>
-
-
-<h3>Install</h3>
+<h2>Build and install instructions</h2>
+<h3>Prerequisites</h3>
+<p>  
+If you wish to build gerbv from source, your system should have the
+following libraries:
 <ul>
-<h4>By downloading a release</h4>
+<li><a href="http://www.gtk.org/">GTK+</a>, the graphical toolkit (required).</li>
+<li>Optional: <a
+href="http://developer.gnome.org/doc/API/gdk-pixbuf/index.html">GDK-Pixbuf</a>,
+for SVG export.</li>
+<li>Optional: <a href="http://libpng.org/">libpng</a>, needed by GDK-Pixbuf to generate PNGs.</li>
+<li>Optional, but recommended: <a
+href="http://cairographics.org/">Cairo</a>, a graphics library.  This
+provides advanced graphics rendering capability, as well as Gerber editing.</li>
+</ul>
 
+<h3>Building gerbv by downloading a release</h3>
 <ol>
-<li> Download tarballs from <a href="http://prdownloads.sourceforge.net/gerbv">here</a>.
+<li> Download source tarballs from <a href="http://prdownloads.sourceforge.net/gerbv">here</a>.
 <li> Expand source by running <code>gzip -dc &lt;filename&gt; | tar xf -</code>
 <li> Change to newly expanded directory 
 <li> Type <code>./configure &lt;switches&gt;</code>.<br>
@@ -245,9 +188,7 @@ and the respective original authors (which are listed in respective files).
 <li> Test by typing <code>gerbv</code>
 </ol>
 
-
-<h4>By using anonymous CVS</h4>
-
+<h3>Building gerbv by downloading from anonymous CVS</h3>
 <ol>
 <li> Login on anonymous CVS (only needed the first time):<br>
      <code>cvs -d:pserver:anonymous@gerbv.cvs.sourceforge.net:/cvsroot/gerbv login </code>.<br>
@@ -255,12 +196,7 @@ and the respective original authors (which are listed in respective files).
 <li> Check out the source tree:<br>
      <code>cvs -z3 -d:pserver:anonymous@gerbv.cvs.sourceforge.net:/cvsroot/gerbv co gerbv</code>
 <li> Recreate all build system files:<br>
-     <code>aclocal</code><br>
-     <code>autoheader</code><br>
-     <code>automake --copy --add-missing</code><br>
-     <code>autoconf</code><br>
-     I have also made a simple script which is called with 
-     <code>./rebuild_conf</code> which does all the auto* stuff.
+     <code>sh autogen.sh</code><br>
 <li> Type <code>./configure &lt;switches&gt;</code>.<br>
      The following (gerbv) switches are available to configure:
      <ul>
@@ -286,74 +222,112 @@ and the respective original authors (which are listed in respective files).
 <li> Run <code>cvs update</code> in the checked out gerbv directory to get the latest changes.
 </ol>
 </ul>
+<h3>Supported platforms</h3>
+Gerbv has been built and tested on 
+<ul>
+<li> Linux (2.2/2.4/2.6)
+<li> NetBSD/i386 (1.4.1)
+<li> NetBSD/Alpha (1.5.1)
+<li> Solaris (5.7 and 5.8)
+</ul>
+</p>
+
+<h2>License</h2>
+<p>
+gerbv and all associated files are released under the 
+<a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">
+GNU Public License (GPL) version 2.0.</a>
+</p>
+<p>
+Programs and associated files are:<br>
+Copyright &copy; 2001, 2002, 2003, 2004, 2005, 2006 by Stefan Petersen 
+and the respective original authors (which are listed in respective files).
+</p>
 
 
-<h3>Submitting a patch or addition to gerbv</h3>
+<h2>Random resources and information</h2>
+<ul>
+<li> <a href="http://www.sourceforge.net/projects/gerbv/">Gerbv project info page</a>
+<li> <a
+href="http://sourceforge.net/project/screenshots.php?group_id=33921">Gerbv
+sceenshots.</a>
+<li> <a href="http://prdownloads.sourceforge.net/gerbv/">Download
+gerbv source code</a>
+<li> <a href="http://gerbv.cvs.sourceforge.net/gerbv/gerbv">
+     Browse the gerbv CVS repository</a>
+<li> Read the <a href="gerbv-man.html">man page</a> for the current release
+<li><a href="http://gerber2eps.sourceforge.net/">Gerber2eps.</a>
+   Generates Encapsulated PostScript from Gerber files.</li>
+<li><a href="http://members.optusnet.com.au/~eseychell/">gerb2tif.</a>
+   Generated TIFF from Gerber files. Also includes a win32 binary for the interested (new URL 20031231).</li>
+<li><a href="http://www.wizards.de/phil/java/rs274x.html">Gerber RS-274D/X file viewer in Java.</a> 
+   Doesn't seem to work too well. Maybe a start if someone likes to hack Java.
+<li><a href="http://www.swcp.com/~jchavez/gerber2pdf.html">gerber2pdf.</a>
+  A Python script that converts a gerber file 2 pdf. Seems quite advanced.
+<li><a href="http://gbtiler.sourceforge.net/">GBTiler.</a> Not actually a 
+  viewer, but a panelizer as I understand it. Takes several gerber files
+  and puts them together next to each other. Written in Perl.
+<li><a href="http://claymore.engineer.gvsu.edu/~steriana/Python/gerbmerge/">
+  GerbMerge</a> is also a panelizer, but written in Python.
+<li>To convert an RS274D with an external aperture list to an RS274X Larry Doolittle
+<a href="http://archives.seul.org/geda/dev/Sep-2004/msg00003.html">described</a>
+a <a href="pads-conv.pl">short perl script</a> in an email. Ormund Williams 
+tried to use it, but had to do some 
+<a href="http://archives.seul.org/geda/user/Apr-2008/msg00138.html">slight modifications</a>
+to make it work for him.</li>
+<li>
+<a href="docs/rs274xrevd_e.pdf">The Gerber (RS-274X) spec.</a>
+</li>
+<li>
+<a href="http://www.artwork.com/gerber/appl2.htm">
+D-codes, Apertures & Gerber Plot Files</a>
+Desribes how a photo plotter works and describes RS-274D.
+</li>
+<li>
+<a href="http://www.artwork.com/gerber/274x/rs274x.htm">
+What's all this about RS274X Anyway?</a>
+Discusses the extension to RS27X from RS274D.
+</li>	  
+<li>
+<a href="http://www.precma.com/informatica/tutorial.htm">
+Eagle Gerber Tutorial</a>
+</li>
+<li>
+<a href="http://www.apcircuits.com/resources/information/gerber_data.html">
+An overview of Gerber and drill files from APCircuits</a>
+</li>
+</ul>
+
+
+<h2>Submitting a patch or addition to gerbv</h2>
 <ul>
 <li>
 We are interested in all ideas and suggestions regarding gerbv. We also 
 reserve us the right to reject them though. Ideas implemented in source
 code always has a greater chance to make it into the release in a near 
-future.
+future.</li>
 <li>
 If you want to implement something for gerbv there is a certain "code
 standard" we try to maintain. That is described in a text file in the
 distribution HACKING. Please read it. And check that your code doesn't
 stand out too much from the rest regarding naming of functions and
-variables.
+variables.</li>
 <li>
-If you send in a patch <tt>diff</tt> is a very good tool. Before you
-start hacking, make a copy of the original file:<br>
-<tt>cp &lt;file&gt; &lt;file.orig&gt;</tt> for example like 
-<tt>cp gerbv.c gerbv.c.orig</tt>.<br>
-
-Then use diff as:<br>
+When submitting a patch, please use<br>
 <tt>diff -Naur &lt;file.orig&gt; &lt;file&gt; &gt; &lt;file.diff&gt;</tt><br>
-and send us the diff file.
+and send us the diff file.</li>
 <li>
 <b>Important!</b> Please base your patch against the <b>latest 
 version of the trunk</b> held in CVS!  Do not
 base your patch against the released branch since the project maintainers 
 do not have lots of time to merge your patch into the trunk if it does not 
 apply cleanly to the trunk.  If you have questions about submitting patches, 
-post them to the geda-dev
-mailing list.
-</ul>
-
-<h3>gEDA and gerbv Internet resources</h3>
-<ul>
-  <li>gerbv Homepage: <a href="http://gerbv.sourceforge.net/">
-                   http://gerbv.sourceforge.net/</a><br>
-  <li>gEDA Homepage: <a href="http://www.geda.seul.org/">
-                  http://www.geda.seul.org/</a><br>
-
-    <li>Mailing list:  
-  Gerber Viewer uses the ordinary gEDA mailing list, hosted by
-  <a href="http://seul.org">Simple End User Linux, SEUL</a><p>
-
-	To subscribe send an email to majordomo (AT) geda (DOT) seul (DOT) org  
-	with <em>subscribe geda-dev</em> in the body.<br>
-		
-	To unsubscribe send an email to majordomo (AT) geda (DOT) seul (DOT) org
-	with <em>unsubscribe geda-dev</em> in the body.<br>
-
-	To send email to the list use the address:<br>
-	<ul>
-		<code>geda-dev (AT) geda (DOT) seul (DOT) org</code><p>
-	</ul>
-	Remember, <em>geda-dev (AT) geda (DOT) seul (DOT) org</em> is for the actual traffic.<br>  
-	For administrative commands, use <em>majordomo (AT) geda (DOT) seul
-	(DOT) org</em>.<p>
-
-	The mailing list archive is at:<br>
-	<ul>
-		<code>http://www.geda.seul.org/mailinglist </code><p>
-	</ul>
-	<strong>Many thanks to the SEUL project for hosting gEDA!</strong>
+post them to the geda-dev mailing list.
+</li>
 </ul>
 
 
-<h3>Contact information</h3>
+<h2>Contact information</h2>
 <p>
 <ul>
 <li>
@@ -379,7 +353,7 @@ To communicate with a gerbv developer:  Please post your query on the geda-dev
 mailing list.
 </li>
 </ul>
-
+</p>
 
 <h3>Archives</h3>
 <ul>
