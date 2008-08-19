@@ -19,9 +19,7 @@ width="48" height="48" border="0" alt="gerbv Logo"> </A>
 <h2>Overview</h2>
 <p>
 <ul>
-<li>Gerbv is a viewer for Gerber RS-274X files.  It does not read RS-274D
-files.</li>
-<li>Gerbv also reads many drill and pick-and-place files.</li>
+<li>Gerbv is a viewer for Gerber RS-274X files, Excellon drill files, and CSV pick-and-place files.</li>
 <li>Gerbv is a native Linux application, and it runs on many common unix
 platforms.</li>
 <li>Gerbv is 
@@ -31,6 +29,7 @@ platforms.</li>
 from 
 <a href="http://sourceforge.net/project/showfiles.php?group_id=33921">this
 page</a>.</li>
+<li>The core functionality of gerbv is located in a separate library (libgerbv), allowing developers to include Gerber parsing/editing/exporting/rendering into other programs. Documentation for libgerbv is <a href="doxygen/index.html">here</a>.</li>
 <li>Gerbv is one of the utilities 
 affiliated with the <a href="http://www.geda.seul.org/">gEDA</a> project,
 an umbrella organization dedicated to producing free software tools for
@@ -160,13 +159,13 @@ If you wish to build gerbv from source, your system should have the
 following libraries:
 <ul>
 <li><a href="http://www.gtk.org/">GTK+</a>, the graphical toolkit (required).</li>
-<li>Optional: <a
-href="http://developer.gnome.org/doc/API/gdk-pixbuf/index.html">GDK-Pixbuf</a>,
-for SVG export.</li>
-<li>Optional: <a href="http://libpng.org/">libpng</a>, needed by GDK-Pixbuf to generate PNGs.</li>
 <li>Optional, but recommended: <a
 href="http://cairographics.org/">Cairo</a>, a graphics library.  This
 provides advanced graphics rendering capability, as well as Gerber editing.</li>
+<li>Optional (only needed for non-Cairo builds): <a
+href="http://developer.gnome.org/doc/API/gdk-pixbuf/index.html">GDK-Pixbuf</a>,
+for PNG export.</li>
+<li>Optional (only needed for non-Cairo builds): <a href="http://libpng.org/">libpng</a>, needed to generate PNGs.</li>
 </ul>
 
 <h3>Building gerbv by downloading a release</h3>
@@ -241,6 +240,12 @@ Gerbv has been built and tested on
 <li> Solaris (5.7 and 5.8)
 </ul>
 </p>
+
+<h2>Developers</h2>
+
+<p>Gerbv is split into a core functional library and a GUI portion. Developers wishing to incorporate Gerber parsing/editing/exporting/rendering into other programs are welcome to use libgerbv. Complete API documentation for libgerbv is <a href="doxygen/index.html">here</a>, as well as many example programs using libgerbv.
+</p>
+
 
 <h2>License</h2>
 <p>
