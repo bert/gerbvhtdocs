@@ -51,7 +51,7 @@ are typically output by a
 <a href="http://en.wikipedia.org/wiki/Electronic_design_automation">PCB CAD</a> tool
 (such as the gEDA Project's 
 <a href="http://pcb.sourceforge.net/">PCB</a>),
-and are sent to a PCB manufacturer who uses the files to 
+and are sent to a PCB manufacturer who uses the files
 for manufacturing <a
 href="http://en.wikipedia.org/wiki/Printed_circuit_board">
 Printed Circuit Boards (PCBs)</a>.  
@@ -72,8 +72,9 @@ the files with gerbv.
 <p>
 In the Gerber format, the different layers of a PCB (e.g. top silk,
 top metal, interior layers, etc.) are held in separate files.  Information about the
-PCB's stackup is <b>not</b> captured by Gerber files; it is up to the user to 
-supply this information to gerbv, and to his PCB manufacturer.
+PCB's stackup (i.e. layer order, thickness, etc) is <b>not</b> captured by Gerber files; 
+it is up to the user to supply this information to gerbv, and to his PCB
+manufacturer.
 </p>
 
 
@@ -81,42 +82,52 @@ supply this information to gerbv, and to his PCB manufacturer.
 <p>
 In summary, gerbv supports the following features:
 <ul>
-<li>Runs on Linux (Linux native).</li>
-<li>Displays RS-274X files.  (Does <b>not</b> display RS-274D files)</li>
-<li>Handles aperture macros with up to 10 levels of recursion.</li>
-<li>Displays many different drill file formats.  In particular, Excellon drill
-files will be displayed.  Other drill files with similar syntax will also display.</li>
-<li>Displays well-formed pick-and-place files.  Pick-place files
+<li> Gerbv runs on Linux and other unicies (Linux native).</li>
+<li> An experimental Windows version is available for beta-testing.</li>
+<li> Gerbv displays RS-274X files.  (It does <b>not</b> display RS-274D files)</li>
+<li> Gerbv handles aperture macros with up to 10 levels of recursion.</li>
+<li> Gerbv supports complex layer operations (e.g. knockout).</li>
+<li> Gerbv can display many different drill file formats.  In particular, Excellon drill
+files are supported.  Other drill files with similar syntax will also display.</li>
+<li> Gerbv displays well-formed pick-and-place files.  Pick-place files
 should contain XYRS (X, Y, Rotation, placement Side) information, and
 be held in a comma-separated ASCII (.csv) format.</li>
-<li> Autodetection of Gerber, drill, or pick-place file type upon
+<li> Gerbv will autodetect Gerber, drill, or pick-place file type upon
 readin.</li>
-<li>When built using the <a href="http://www.cairographics.org/">Cairo</a>
+<li> When built using the <a href="http://www.cairographics.org/">Cairo</a>
 rendering engine, gerbv can display Gerber layers in
 "semi-transparent" mode, making it easy to visualize your board's
 stack up.</li>
-<li>Gerbv provides facilities for analyzing and validating your Gerber
-file's syntax.  This can be useful in situations in which you are
+<li> Gerbv provides facilities for analyzing and validating your Gerber
+file's syntax, code count, aperture usage, etc.  
+This can be useful in situations in which you are
 having problems in the CAM stage of manufacturing your PC Board (i.e.
 when your manufacturer is having problems with your files).
 </li>
-<li>When built using <a href="http://www.cairographics.org/">Cairo</a>,
+<li> When built using <a href="http://www.cairographics.org/">Cairo</a>,
 gerbv allows for limited Gerber editing.  (Currently limited to
 object deletion.)</li>
-<li> Panning  and zooming (both stepwise and outline).</li>
-<li> Autoscale. Zoom and pan to fit window.</li>
-<li> Several files can be loaded and be shown "on top of each other".</li>
-<li> Use may turn display of layers on and off independently.</li>
-<li> Use may set layer colors independently.</li>
-<li> Acknowledge layer polarity (paint/scratch/paint).</li>
-<li> A measurement tool so you can make measurements on the image.</li>
-<li> Export image to PNG, .ps, .pdf, .svg (cairo version only).</li>
-<li> Complex layer operations (e.g. knockout).</li>
-<li> Possible to reload files which reloads all loaded files. Good when hacking
-     Gerber files.</li>
-<li> Project files where you can store the names of a set of loaded files
-     and color of resp. layer so you easily can reload all Gerber files
-     of a project.</li>
+<li> Panning and zooming (both stepwise and outline) of the image is supported.</li>
+<li> Gerbv supports image autoscale -- i.e. zoom and pan the image to fit the
+viewing window.</li>
+<li> Multiple files can be loaded simultaneously and be shown "on top of each
+other".</li>
+<li> The number of layers you may load simultaneously is unlimited by gerbv.</li>
+<li> The layer order (stackup) may be changed using an intuitive "drag and drop" menu.</li>
+<li> You may turn display of individual layers on and off independently using a checkbox.</li>
+<li> You may set layer colors independently using a pop up color choice window.</li>
+<li> You may change the layer polarity (negative/positive display).</li>
+<li> Gerbv incorporates a measurement tool so you can make measurements on the image.</li>
+<li> Three different measurement units supported: inch, mm, mil (1/1000 inch).  Measurement
+units are user-selectable</li>
+<li> Gerbv can export a layer image to PNG, .ps, .pdf, and .svg, both
+from within the GUI as well as via a command line switch (cairo version only).</li>
+<li> Gerbv includes a reload operation, which re-reads all loaded files off
+disk. This feature is useful when you are manually hacking Gerber files.</li>
+<li> Gerbv allows you to save a session into a project file.  The project file
+stores the names of all loaded files, their stackup, color, etc. so
+so you can easily reload all Gerber files in a project at a later date
+(e.g. after re-editing then using a PCB layout tool.</li>
 </ul>
 </p>
 
