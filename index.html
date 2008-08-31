@@ -34,7 +34,7 @@ page</a>.</li>
 affiliated with the <a href="http://www.geda.seul.org/">gEDA</a> project,
 an umbrella organization dedicated to producing free software tools for
 electronic design.</li>
-<li>The latest official gerbv release is version 2.1.0, released on 8.24.2008.</li>
+<li>The latest official gerbv release is version 2.1.0, released on 2008-08-24.</li>
 </ul>
 </p>
 
@@ -82,7 +82,7 @@ manufacturer.
 <p>
 In summary, gerbv supports the following features:
 <ul>
-<li> Gerbv runs on Linux and other unicies (Linux native).</li>
+<li> Gerbv runs on Linux and other Unices (Linux native).</li>
 <li> An experimental Windows version is available for beta-testing.</li>
 <li> Gerbv displays RS-274X files.  (It does <b>not</b> display RS-274D files)</li>
 <li> Gerbv handles aperture macros with up to 10 levels of recursion.</li>
@@ -128,7 +128,7 @@ disk. This feature is useful when you are manually hacking Gerber files.</li>
 <li> Gerbv allows you to save a session into a project file.  The project file
 stores the names of all loaded files, their stackup, color, etc. so
 so you can easily reload all Gerber files in a project at a later date
-(e.g. after re-editing then using a PCB layout tool.</li>
+(e.g. after re-editing then using a PCB layout tool).</li>
 </ul>
 </p>
 
@@ -246,10 +246,11 @@ for PNG export.</li>
 <h3>Supported platforms</h3>
 Gerbv has been built and tested on 
 <ul>
-<li> Linux (2.2/2.4/2.6)
-<li> NetBSD/i386 (1.4.1)
-<li> NetBSD/Alpha (1.5.1)
-<li> Solaris (5.7 and 5.8)
+<li> Linux (2.2/2.4/2.6)</li>
+<li> NetBSD/i386 (1.4.1)</li>
+<li> NetBSD/Alpha (1.5.1)</li>
+<li> Solaris (5.7 and 5.8)</li>
+<li> FreeBSD/i386 (6.0 and 7.0)</li> 
 </ul>
 </p>
 
@@ -295,7 +296,7 @@ tried to use it, but had to do some
 <a href="http://archives.seul.org/geda/user/Apr-2008/msg00138.html">slight modifications</a>
 to make it work for him.</li>
 </ul>
-<h3>Information about the Gerber file format</h3>
+<h3>Information about Gerber and Excellon file formats</h3>
 <ul>
 <li>
 <a href="docs/rs274xrevd_e.pdf">The Gerber (RS-274X) spec.</a>
@@ -315,6 +316,9 @@ Discusses the extension to RS27X from RS274D.
 What is a Gerber File?</a> on CircuitPeople.  A very informative overview
 for novices.
 </li>
+<a href="http://www.excellon.com/manuals/program.htm">A description of the
+Excellon file format</a> at the Excellon company's website.
+</li>
 <li>
 <a href="http://www.apcircuits.com/resources/information/gerber_data.html">
 An overview of Gerber and drill files from APCircuits</a>
@@ -327,7 +331,7 @@ An overview of Gerber and drill files from APCircuits</a>
 <li>
 We are interested in all ideas and suggestions regarding gerbv. We also 
 reserve us the right to reject them though. Ideas implemented in source
-code always has a greater chance to make it into the release in a near 
+code always have a greater chance to make it into the release in a near 
 future.</li>
 <li>
 If you want to implement something for gerbv there is a certain "code
@@ -337,7 +341,7 @@ stand out too much from the rest regarding naming of functions and
 variables.</li>
 <li>
 When submitting a patch, please use<br>
-<tt>diff -Naur &lt;file.orig&gt; &lt;file&gt; &gt; &lt;file.diff&gt;</tt><br>
+<tt>cvs diff -Nau &lt;file.orig&gt; &lt;file&gt; &gt; &lt;file.diff&gt;</tt><br>
 and send us the diff file.</li>
 <li>
 <b>Important!</b> Please base your patch against the <b>latest 
@@ -359,8 +363,8 @@ GNU Public License (GPL) version 2.0.</a>
 </p>
 <p>
 Programs and associated files are:<br>
-Copyright &copy; 2001, 2002, 2003, 2004, 2005, 2006 by Stefan Petersen 
-and the respective original authors (which are listed in respective files).
+Copyright &copy; 2001 -- 2008 by Stefan Petersen 
+and the respective original authors who are listed in the source files.
 </p>
 
 
