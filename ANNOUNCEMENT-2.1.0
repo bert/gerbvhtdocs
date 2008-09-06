@@ -1,0 +1,98 @@
+Hello!
+
+This is to announce the release of gerbv-2.1.0!  Gerbv is an open source
+Gerber file (RS-274X only) viewer for Linux and other unix flavors.  Besides
+viewing Gerbers, you may also view Excellon drill files as well as XYRS
+(pick-place) files.  For more information, browse to gerbv's web site: 
+
+http://gerbv.sourceforge.net/
+
+Gerbv is allied with the gEDA Project, an open-source collaborative
+which has produced an end-to-end tool chain for PCB design on Linux and
+other unices.  The gEDA Project's website is here:
+
+http://geda.seul.org/
+
+-----------------------------------------------------------------------
+Gerbv release 2.1.0 introduces several new features.  Here is
+a list of new features:
+
+*  Added ability to select objects, with the option of deleting or viewing
+basic properties of the objects
+
+*  Split off the core functionality of gerbv into a library (libgerbv) to
+allow developers to quickly write software using Gerber
+parsing/editing/exporting/rendering functionality.  Full DOxygen
+documentation has also been created to facilitate developers wishing to use
+libgerbv.
+
+*  Added export to RS274X and Excellon functionality, allowing gerbv to
+translate files between formats.  The RS274X export function can also be
+used to "clean" troublesome files to a more compatible format.
+
+*  Added the ability to override the Excellon format "guessing", allowing
+non-standard drill files to be correctly rendered
+
+*  Greatly expanded the command line functionality, including the ability to
+panelize boards into a single one through the command line
+
+*  Added "Aperture usage" tab to Gerber reports.  This allows the user to
+see how often each aperture is used in all visible layers of his project.
+
+
+Several notable bugs were squished in release 2.1.0:
+
+*  Fixed bug when exporting several layers to SVG/PDF/PS, which caused
+corrupted output and/or crashes
+
+*  Fixed several Windows-only problems related to parsing and rendering
+
+*  Fixed rendering bug when using polygon objects within step and repeat
+blocks
+
+*  Improved RS-274X export output format to work with certain Gerber viewing
+software
+
+
+-----------------------------------------------------------------------
+Gerbv's homepage is on SourceForge:
+
+        http://gerbv.sourceforge.net/.
+
+There you will find a bug database, a feature request database, the CVS repo
+and a commit mailinglist.  
+
+To download gerbv-2.1.0, go to 
+
+        http://prdownloads.sourceforge.net/gerbv/
+
+and grab gerbv-2.1.0.tar.gz
+
+To install gerbv do this:
+1. tar zxf gerbv-2.1.0.tar.gz
+2. cd gerbv-2.1.0
+3. ./configure
+4. make && make install
+
+Interesting configure options are:
+
+--help              : Lists all configure options.
+--enable-debug      : Program will output lots of debug spew while running
+                      (default = no -> no debug output by default.)
+--disable-exportpng : Disable compilation of export of PNGs.
+                      (default = no -> exportpng on by default.)
+--enable-unit-mm    : Set default unit for coordinates in status bar to mm
+                      (default = no -> units = inches by default.)
+--disable-cairo     : Use GDK only for graphics rendering.
+                      (default = no -> both GDK and cairo used by default.)
+--enable-efence     : Link with ElectricFence for malloc debugging
+                      (default = no -> efence off by default.)
+--disable-update-desktop-database
+                    : Update desktop icon database after installation
+                      (default = no -> desktop icon installed by default.)
+
+
+Thank you for using gerbv-2.1.0!
+
+                              -- The gerbv team
+
