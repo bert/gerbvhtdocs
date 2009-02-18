@@ -1,0 +1,74 @@
+Hello!
+
+This is to announce the release of gerbv-2.2.0!  Gerbv is an open source
+Gerber file (RS-274X only) viewer for Linux and other unix flavors.  Besides
+viewing Gerbers, you may also view Excellon drill files as well as XYRS
+(pick-place) files.  For more information, browse to gerbv's web site: 
+
+http://gerbv.sourceforge.net/
+
+Gerbv is allied with the gEDA Project, an open-source collaborative
+which has produced an end-to-end tool chain for PCB design on Linux and
+other unices.  The gEDA Project's website is here:
+
+http://geda.seul.org/
+
+-----------------------------------------------------------------------
+Gerbv release 2.2.0 introduces several new features and bug fixes:
+
+*  Updated Windows build with many bug fixes, much faster rendering performance,
+and other tweaks to make the Windows version much more usable.
+
+*  Add rendering optimizations to all platforms, improving render performance by
+up to 3X when zoomed in, and 50% improvement in zoomed out performance.
+
+*  Many changes to the build options, including the addition of the compile
+option -no-undefined to make it easier to build Windows DLLs, improved cross-
+compiling tool detection, and better relocatable install support.
+
+*  Improved project file load/save dialog.
+
+*  Improved the ability to parse drill files with user specified formats.
+
+-----------------------------------------------------------------------
+Gerbv's homepage is on SourceForge:
+
+        http://gerbv.sourceforge.net/.
+
+There you will find a bug database, a feature request database, the CVS repo
+and a commit mailinglist.  
+
+To download gerbv-2.2.0, go to 
+
+        http://prdownloads.sourceforge.net/gerbv/
+
+and grab gerbv-2.2.0.tar.gz
+
+To install gerbv do this:
+1. tar zxf gerbv-2.2.0.tar.gz
+2. cd gerbv-2.2.0
+3. ./configure
+4. make && make install
+
+Interesting configure options are:
+
+--help              : Lists all configure options.
+--enable-debug      : Program will output lots of debug spew while running
+                      (default = no -> no debug output by default.)
+--disable-exportpng : Disable compilation of export of PNGs.
+                      (default = no -> exportpng on by default.)
+--enable-unit-mm    : Set default unit for coordinates in status bar to mm
+                      (default = no -> units = inches by default.)
+--disable-cairo     : Use GDK only for graphics rendering.
+                      (default = no -> both GDK and cairo used by default.)
+--enable-efence     : Link with ElectricFence for malloc debugging
+                      (default = no -> efence off by default.)
+--disable-update-desktop-database
+                    : Update desktop icon database after installation
+                      (default = no -> desktop icon installed by default.)
+
+
+Thank you for using gerbv-2.2.0!
+
+                              -- The gerbv team
+
