@@ -190,12 +190,8 @@ for PNG export.</li>
      <li><code>--help</code>: Lists all configure options.</li>
      <li><code>--enable-debug</code>: Program will output lots of debug spew while running.
                       (default = no -> no debug output by default.)</li>
-     <li><code>--disable-exportpng</code>: Disable compilation of export of PNGs.
-                      (default = no -> exportpng on by default.)</li>
      <li><code>--enable-unit-mm</code>: Set default unit for coordinates in status bar to mm
                       (default = no -> units = inches by default.)</li>
-     <li><code>--disable-cairo</code>: Use GDK only for graphics rendering.
-                      (default = no -> both GDK and cairo used by default.)</li>
      <li><code>--enable-efence</code>: Link with ElectricFence for malloc debugging
                       (default = no -> efence off by default.)</li>
      <li><code>--disable-update-desktop-database</code>:
@@ -208,13 +204,10 @@ for PNG export.</li>
 <li> Test by typing <code>gerbv</code>
 </ol>
 
-<h3>Building gerbv by downloading from anonymous CVS</h3>
+<h3>Building gerbv by downloading from anonymous git repository</h3>
 <ol>
-<li> Login on anonymous CVS (only needed the first time):<br>
-     <code>cvs -d:pserver:anonymous@gerbv.cvs.sourceforge.net:/cvsroot/gerbv login </code>.<br>
-     Press Enter when CVS asks for a password.
 <li> Check out the source tree:<br>
-     <code>cvs -z3 -d:pserver:anonymous@gerbv.cvs.sourceforge.net:/cvsroot/gerbv co gerbv</code>
+     <code>git clone git://git.gpleda.org/gerbv.git</code>
 <li> Recreate all build system files:<br>
      <code>sh autogen.sh</code><br>
 <li> Type <code>./configure &lt;switches&gt;</code>.<br>
@@ -223,12 +216,8 @@ for PNG export.</li>
      <li><code>--help</code>: Lists all configure options.</li>
      <li><code>--enable-debug</code>: Program will output lots of debug spew while running.
                       (default = no -> no debug output by default.)</li>
-     <li><code>--disable-exportpng</code>: Disable compilation of export of PNGs.
-                      (default = no -> exportpng on by default.)</li>
      <li><code>--enable-unit-mm</code>: Set default unit for coordinates in status bar to mm
                       (default = no -> units = inches by default.)</li>
-     <li><code>--disable-cairo</code>: Use GDK only for graphics rendering.
-                      (default = no -> both GDK and cairo used by default.)</li>
      <li><code>--enable-efence</code>: Link with ElectricFence for malloc debugging
                       (default = no -> efence off by default.)</li>
      <li><code>--disable-update-desktop-database</code>:
@@ -239,7 +228,7 @@ for PNG export.</li>
 <li> Type <code>make install</code>. Please note that if you want to
      install it in a system directory you have to <code>su</code> first.
 <li> Test by typing <code>gerbv</code>
-<li> Run <code>cvs update</code> in the checked out gerbv directory to get the latest changes.
+<li> Run <code>git pull</code> in the checked out gerbv directory to get the latest changes.
 </ol>
 </ul>
 <h3>Supported platforms</h3>
@@ -257,6 +246,9 @@ Gerbv has been built and tested on
 
 <p>Gerbv is split into a core functional library and a GUI portion. Developers wishing to incorporate Gerber parsing/editing/exporting/rendering into other programs are welcome to use libgerbv. Complete API documentation for libgerbv is <a href="doxygen/index.html">here</a>, as well as many example programs using libgerbv.
 </p>
+<p>
+Gerbv now uses <a href="http://git-scm.com/">git</a> for source code control. It is generously provided by <a href="http://gpleda.org/">gpleda.org</a>. You can get a crash course in gpleda git from <a href="http://geda.seul.org/wiki/geda:scm">here</a>.
+</p>
 
 
 
@@ -269,8 +261,9 @@ href="http://sourceforge.net/project/screenshots.php?group_id=33921">Gerbv
 sceenshots.</a>
 <li> <a href="http://prdownloads.sourceforge.net/gerbv/">Download
 gerbv source code</a>
-<li> <a href="http://gerbv.cvs.sourceforge.net/gerbv/gerbv">
-     Browse the gerbv CVS repository</a>
+<li> <a href="http://git.gpleda.org/?p=gerbv.git;a=summary">
+     Browse the gerbv git repository</a>, which is part of the
+     <a href="http://git.gpleda.org/">gpleda git repository</a>
 <li> Read the <a href="gerbv-man.html">man page</a> for the current release
 </ul>
 <h3>Other Gerber software</h3>
@@ -337,16 +330,13 @@ distribution HACKING. Please read it. And check that your code doesn't
 stand out too much from the rest regarding naming of functions and
 variables.</li>
 <li>
-When submitting a patch, please use<br>
-<tt>cvs diff -Nau &lt;file.orig&gt; &lt;file&gt; &gt; &lt;file.diff&gt;</tt><br>
-and send us the diff file.</li>
+When submitting a patch, the developers prefer git patches. The parameter to use to git is:<br>
+<tt>git format-patch &lt;revision range&gt;</tt><br>
+and send us the diff file using 
+<a href="http://sourceforge.net/tracker/?group_id=33921&atid=409540">
+Sourceforge's patch tracker.</a></li>
 <li>
-<b>Important!</b> Please base your patch against the <b>latest 
-version of the trunk</b> held in CVS!  Do not
-base your patch against the released branch since the project maintainers 
-do not have lots of time to merge your patch into the trunk if it does not 
-apply cleanly to the trunk.  If you have questions about submitting patches, 
-post them to the 
+ If you have questions about submitting patches, post them to the 
 <a href="http://www.seul.org/cgi-bin/mailman/listinfo/geda-dev">
 geda-dev mailing list.</a>
 </li>
@@ -360,7 +350,7 @@ GNU Public License (GPL) version 2.0.</a>
 </p>
 <p>
 Programs and associated files are:<br>
-Copyright &copy; 2001 -- 2008 by Stefan Petersen 
+Copyright &copy; 2001 -- 2009 by Stefan Petersen 
 and the respective original authors who are listed in the source files.
 </p>
 
