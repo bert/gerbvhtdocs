@@ -1,0 +1,103 @@
+Hello!
+
+This is to announce the release of gerbv-2.3.0!  Gerbv is an open source
+Gerber file (RS-274X only) viewer for Linux and other unix flavors.  Besides
+viewing Gerbers, you may also view Excellon drill files as well as XYRS
+(pick-place) files.  For more information, browse to gerbv's web site: 
+
+http://gerbv.gpleda.org/
+
+Gerbv is allied with the gEDA Project, an open-source collaborative
+which has produced an end-to-end tool chain for PCB design on Linux and
+other unices.  The gEDA Project's website is here:
+
+http://gpleda.org/
+
+---- NOTICE ----
+As of 12:th of June 2009, gerbv is hosted on the same location as the
+rest of the gpleda projects. That means:
+* Location of homepage of gerbv is now http://gerbv.gpleda.org/ 
+  (please change your bookmarks)
+* Source of gerbv project is now under git on http://git.gpleda.org/
+
+The gerbv team will thank Ales Hvezda for making the transistion of the
+web site and the source code a smooth ride.
+
+
+-----------------------------------------------------------------------
+Gerbv release 2.3.0 introduces mostly major bug fixes:
+
+* Fixed a minor arc rendering bug in fast mode.
+
+* Make the svg/pdf/ps export use a 1:1 scale instead of scaling to fit
+  the page.
+
+* Always require cairo now since we make use of some of the transformation
+  functions even when using gdk rendering.
+
+* Fix a bug in the vertical scrollbar calculations.
+
+* Fix a bug where apertures < 10 were potentially ignored in
+  some drill files.
+
+* Fix clipping bug when viewing files with image offsets.
+
+* Fix a bug where clicking on the message tab caused the keyboard 
+  accelerators stop working.
+
+* Improve the macro parser.
+
+* Allow 0 degree rotation
+
+* Fix some drill parser bugs element.
+
+* Fix some additional Excellon export bugs.
+
+* Fix the pkgconfig file to include some needed dependencies.
+
+* Includes a "layer transformation" dialog window and functionality.  
+  Right clicking on a layer in the sidebar and selecting the "modify 
+  layer orientation" menu item brings up a dialog box which allows the 
+  user to translate/scale/rotate/mirror the layer.  When re-saving the 
+  layer, all user transformations are saved with the RS-274X file.
+
+
+-----------------------------------------------------------------------
+
+Gerbv's homepage is from now on gpleda.org:
+
+        http://gerbv.gpleda.org/
+
+There you will find a bug database, a feature request database, the CVS repo
+and a commit mailinglist.  
+
+To download gerbv-2.3.0, go to 
+
+        http://prdownloads.sourceforge.net/gerbv/files/
+
+and grab gerbv-2.3.0.tar.gz
+
+To install gerbv do this:
+1. tar zxf gerbv-2.3.0.tar.gz
+2. cd gerbv-2.3.0
+3. ./configure
+4. make && make install
+
+Interesting configure options are:
+
+--help              : Lists all configure options.
+--enable-debug      : Program will output lots of debug spew while running
+                      (default = no -> no debug output by default.)
+--enable-unit-mm    : Set default unit for coordinates in status bar to mm
+                      (default = no -> units = inches by default.)
+--enable-efence     : Link with ElectricFence for malloc debugging
+                      (default = no -> efence off by default.)
+--disable-update-desktop-database
+                    : Update desktop icon database after installation
+                      (default = no -> desktop icon installed by default.)
+
+
+Thank you for using gerbv-2.3.0!
+
+                              -- The gerbv team
+
