@@ -1,37 +1,27 @@
-I'm pleased to announce the release of gerbv-2.5.0.  gerbv is the open 
-source RS-274X and Excellon drill file viewer.  For more information on 
-gerbv, visit
-
-   http://gerbv.gpleda.org
-   http://www.sourceforge.net/projects/gerbv
-
-Many thanks to the users who submitted bug reports and patches, especially
-Stefan Tauner for his work on menu cleanup and adding keyboard accelerators
-for all commands.
-
 ========================================================================
 Release Notes for gerbv-2.5.0
 ========================================================================
 The following is a summary of the changes which went into gerbv-2.5.0.
-For a complete list of changes, refer to ChangeLog.
+For a complete list of changes, refer to ChangeLog.  This release
+is primarily a bug fix release.
 
-New features:
-	- menu cleanup and add persistent keyboard accelerators for all
-		commands (thanks to Stefan Tauner)
-	- allow for toggling the visibility of the sidebar and toolbar
-		(patch by Stefan Tauner)
-
-Bug fixes and improvements:
-	- fix drill parsing bug when INCH command is followed by whitespace
-	- unselect items on hidden layers
-	- fix bug when exporting outline macros
-	- fix handling of whitespace within RS274X commands
-	- fix GDK rendering of macro 22 elements with negative coordinates
-	- fix tooltip on modify layer button
-	- fix the example programs for using libgerbv
-	- improve drill file type guesser
-	- pixel-align as many Cairo operations as possible (~10% speedup)
-	- fix segfault in drill parser
-	- fix segfault in pick-and-place parser
-	- increase max zoom 4x to improve measurement accuracy
-
+- libgerbv:  fix leak and possible segfault in drill parser
+- libgerbv:  fix segfault in pick and place parser
+- gerbv:     add persistent keyboard accelerators and extra menu options
+- gerbv:     increase max zoom 4x to allow more accurate measurements
+- libgerbv:  fix bug which caused the drill parser to crash on an empty line
+- gerbv:     change F8 shortcut to F7 per GNOME HIG
+- gerbv:     add psuedo fullscreen mode
+- gerbv:     add ability to toggle sidebar visibility
+- gerbv:     speed up cairo rendering.
+- libgerbv:  improved detection of drill files (comment lines are now
+             ignored during file type detection)
+- libgerbv:  fix handling of trailing zero suppression with very large
+             precisions.
+- examples:  fix some of the example code showing how to use libgerbv.
+- gerbv:     fix gdk rendering of macro 22 elements with negative coordinates
+- gerbv:     fix tooltip for modify layer button
+- libgerbv:  fix handling of whitespace in the middle of an RS-274X command
+- libgerbv:  fix bug in exporting outline macros
+- gerbv:     unselect all items if a layer is hidden
+- libgerbv:  fix drill parsing when INCH has nothing after it
