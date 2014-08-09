@@ -20,7 +20,7 @@ width="48" height="48" border="0" alt="gerbv Logo"> </a>
 <p>
 <ul>
 <li>Gerbv is a viewer for Gerber RS-274X files, Excellon drill files, and CSV pick-and-place files.</li>
-<li>Gerbv is a native Linux application, and it runs on many common unix
+<li>Gerbv is a native Linux application, and it runs on many common UNIX
 platforms. A Windows version is also available.</li>
 <li>Gerbv is 
 <a href="http://www.gnu.org/philosophy/free-sw.html">free</a> /
@@ -36,11 +36,10 @@ an umbrella organization dedicated to producing free software tools for
 electronic design.</li>
 <li>The latest official gerbv release is available <a href="http://sourceforge.net/projects/gerbv/files/gerbv/">here.</a></li>
 </ul>
-</p>
 
 <center>
 <a href="./GerbvScreenshot.png"> 
-<img src="GerbvScreenshotThumb.png">
+<img src="GerbvScreenshotThumb.png" alt="gerbv Screenshot">
 </a>
 </center>
 
@@ -55,7 +54,6 @@ and are sent to a PCB manufacturer who uses the files
 for manufacturing <a
 href="http://en.wikipedia.org/wiki/Printed_circuit_board">
 Printed Circuit Boards (PCBs)</a>.  
-</p>
 <p>
 There are two standards defining 
 Gerber files:  An old one called
@@ -67,14 +65,12 @@ information into the file.
 When you create Gerber files using
 your PCB tool make sure you export RS-274X files if you want to view
 the files with gerbv.
-</p>
 <p>
 In the Gerber format, the different layers of a PCB (e.g. top silk,
 top metal, interior layers, etc.) are held in separate files.  Information about the
-PCB's stackup (i.e. layer order, thickness, etc) is <b>not</b> captured by Gerber files; 
+PCB's stackup (i.e. layer order, thickness, etc.) is <b>not</b> captured by Gerber files; 
 it is up to the user to supply this information to gerbv, and to his PCB
 manufacturer.
-</p>
 
 
 <h2>Gerbv's featureset</h2>
@@ -129,11 +125,10 @@ stores the names of all loaded files, their stackup, color, etc. so
 so you can easily reload all Gerber files in a project at a later date
 (e.g. after re-editing then using a PCB layout tool).</li>
 </ul>
-</p>
 
 <h2>Obtaining and installing gerbv</h2>
 <p>
-Gerbv is targeted to run on Linux and other unix variants.  
+Gerbv is targeted to run on Linux and other UNIX variants.  
 Gerbv is now carried in most of the major Linux distribution's software repositories.
 Therefore, most people will want to
 install gerbv using their favorite package tool (such as yum, apt-get,
@@ -160,7 +155,6 @@ You can also see a recent list of gerbv versions in Fink in the
 <a href="http://pdb.finkproject.org/pdb/package.php/gerbv">
 package database</a>
 </ul>
-</p>
 
 <h2>Build and install instructions</h2>
 <h3>Prerequisites</h3>
@@ -224,7 +218,7 @@ provides advanced graphics rendering capability, as well as Gerber editing.</li>
 <li> Test by typing <code>gerbv</code>
 <li> Run <code>git pull</code> in the checked out gerbv directory to get the latest changes.
 </ol>
-</ul>
+
 <h3>Supported platforms</h3>
 Gerbv has been built and tested on 
 <ul>
@@ -234,16 +228,12 @@ Gerbv has been built and tested on
 <li> Solaris (5.7 and 5.8)</li>
 <li> FreeBSD/i386 (6.0 and 7.0)</li> 
 </ul>
-</p>
 
 <h2>Information for developers</h2>
 
 <p>Gerbv is split into a core functional library and a GUI portion. Developers wishing to incorporate Gerber parsing/editing/exporting/rendering into other programs are welcome to use libgerbv. Complete API documentation for libgerbv is <a href="doxygen/index.html">here</a>, as well as many example programs using libgerbv.
-</p>
 <p>
 Gerbv now uses <a href="http://git-scm.com/">git</a> for source code control. It is generously provided by <a href="http://geda-project.org/">geda-project.org</a>. You can get a crash course in geda-projet git from <a href="http://wiki.geda-project.org/geda:scm">here</a>.
-</p>
-
 
 
 <h2>Random resources and information</h2>
@@ -300,7 +290,7 @@ permission to link to this document.
 </li>
 <li>
 <a href="http://www.artwork.com/gerber/appl2.htm">
-D-codes, Apertures & Gerber Plot Files</a>
+D-codes, Apertures &amp; Gerber Plot Files</a>
 Desribes how a photo plotter works and describes RS-274D.
 </li>
 <li>
@@ -350,12 +340,10 @@ geda-dev mailing list.</a>
 gerbv and all associated files are released under the 
 <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">
 GNU Public License (GPL) version 2.0.</a>
-</p>
 <p>
 Programs and associated files are:<br>
 Copyright &copy; 2001&nbsp;&mdash; 2011 by Stefan Petersen
 and the respective original authors who are listed in the source files.
-</p>
 
 
 <h2>Contact information</h2>
@@ -385,7 +373,6 @@ To communicate with a gerbv developer:  Please post your query on the
 geda-dev mailing list.</a>
 </li>
 </ul>
-</p>
 
 <h3>Archives</h3>
 <ul>
@@ -442,9 +429,9 @@ geda-dev mailing list.</a>
      Announcement is readable <a href="ANNOUNCEMENT-1.0.0">here</a>.
 
 <li> 2004-10-19 :  Another beta of a windows version is released and available 
-<a href="http://sourceforge.net/project/showfiles.php?group_id=33921&package_id=131878&release_id=276492">here</a>.
+<a href="http://sourceforge.net/project/showfiles.php?group_id=33921&amp;package_id=131878&amp;release_id=276492">here</a>.
 <li> 2004-10-07 :  A beta of a windows version is available
-     <a href="http://sourceforge.net/project/showfiles.php?group_id=33921&package_id=131878&release_id=273193">here</a>.
+     <a href="http://sourceforge.net/project/showfiles.php?group_id=33921&amp;package_id=131878&amp;release_id=273193">here</a>.
      There is no particular announcement, but please read the release notes.
 
 <li> 2004-05-27 :  0.16 release available 
@@ -513,7 +500,7 @@ geda-dev mailing list.</a>
      the src directory, run <code>patch &lt; gerber.c.diff</code> and rerun 
      make and make install.
 
-<li> 2001-11-14 : Fifth relase (0.0.5) Available      
+<li> 2001-11-14 : Fifth release (0.0.5) Available      
      <a href="http://prdownloads.sourceforge.net/gerbv/gerbv-0.0.5.tar.gz">here</a>.
      Announcement is readable <a href="ANNOUNCEMENT-0.0.5">here</a>.
 
