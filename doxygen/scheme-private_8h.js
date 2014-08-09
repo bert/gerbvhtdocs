@@ -1,0 +1,47 @@
+var scheme_private_8h =
+[
+    [ "port", "scheme-private_8h.html#af2234850855f1dac9dc357cc9b114642", null ],
+    [ "scheme_opcodes", "scheme-private_8h.html#aa19b61c1cc4e3d425acbf00a5f71e10d", [
+      [ "OP_MAXDEFINED", "scheme-private_8h.html#aa19b61c1cc4e3d425acbf00a5f71e10da9c6ae4f77ddb2d14bae429ea426bc695", null ]
+    ] ],
+    [ "scheme_port_kind", "scheme-private_8h.html#a0c5f458b2937a4d05dc574bbc819b544", [
+      [ "port_free", "scheme-private_8h.html#a0c5f458b2937a4d05dc574bbc819b544a3d65435a8d9b16715209f22b9cfe84f0", null ],
+      [ "port_file", "scheme-private_8h.html#a0c5f458b2937a4d05dc574bbc819b544a5ab80c1e37b4d66d8e0f050088b7820c", null ],
+      [ "port_string", "scheme-private_8h.html#a0c5f458b2937a4d05dc574bbc819b544a79bf157497ccb5a81aecbae9cddfc5b3", null ],
+      [ "port_input", "scheme-private_8h.html#a0c5f458b2937a4d05dc574bbc819b544ab17dcf702fec537f508414ce76e5f88b", null ],
+      [ "port_output", "scheme-private_8h.html#a0c5f458b2937a4d05dc574bbc819b544ad52cb258efc009ebb4271e28951500e1", null ]
+    ] ],
+    [ "charvalue", "scheme-private_8h.html#a7b51c378e0b2eef641da531396ca5af6", null ],
+    [ "closure_code", "scheme-private_8h.html#ae3c81c5fde0df20df08abcf2a1a2a065", null ],
+    [ "closure_env", "scheme-private_8h.html#a630eeea4fe6d97736dd40cdd927e9027", null ],
+    [ "hasprop", "scheme-private_8h.html#a09addd8897155d74dc93a8897d744203", null ],
+    [ "is_character", "scheme-private_8h.html#ad7c2919bd2418632bcbbd505dee55b66", null ],
+    [ "is_closure", "scheme-private_8h.html#a9caaee87b76c810363cc0dbaa516c584", null ],
+    [ "is_continuation", "scheme-private_8h.html#a1c866470803409f48d55107f2db5d8b6", null ],
+    [ "is_environment", "scheme-private_8h.html#a1ac7ecf80a51cef9937fc1040bff9b2c", null ],
+    [ "is_foreign", "scheme-private_8h.html#a30e5cc76ca27108149cd874360c849fc", null ],
+    [ "is_immutable", "scheme-private_8h.html#a7564ebacee25a0c69e5e733d0b2d57d6", null ],
+    [ "is_integer", "scheme-private_8h.html#a19e270c3be9c96fb45eeb133e21e974e", null ],
+    [ "is_macro", "scheme-private_8h.html#a8193268e4cb5fe2e47a00bca55a0e085", null ],
+    [ "is_number", "scheme-private_8h.html#ab29ffd3f7ae6937bd8d78516ec348718", null ],
+    [ "is_pair", "scheme-private_8h.html#a1f42a2602dfee22f206ac16d0d29860a", null ],
+    [ "is_port", "scheme-private_8h.html#a3e0783bb1479f179a39ffb5652af7ff6", null ],
+    [ "is_proc", "scheme-private_8h.html#a33314a49dd0290fc71c1a32c86773529", null ],
+    [ "is_promise", "scheme-private_8h.html#abda016d5d6ed14d18712bc1fbceb2082", null ],
+    [ "is_real", "scheme-private_8h.html#a3856ae9b4edc8a8ff4f4a27937f3bac8", null ],
+    [ "is_string", "scheme-private_8h.html#a075aa4a9426e9c325a49e80063b13221", null ],
+    [ "is_symbol", "scheme-private_8h.html#a71c19c131f3fb299dd1f40704fa7817d", null ],
+    [ "is_syntax", "scheme-private_8h.html#a4f3cf72d4b2a5eb74356c4ba9c7960bd", null ],
+    [ "is_vector", "scheme-private_8h.html#a09bcb8041b2db9e4d47f3643e7593ce4", null ],
+    [ "ivalue", "scheme-private_8h.html#a05e517e31e4d91eb73802cc30f752fc9", null ],
+    [ "nvalue", "scheme-private_8h.html#a1f36d8c62ab61860aed4e545ac070309", null ],
+    [ "pair_car", "scheme-private_8h.html#a1fc5fc6df5e0c5f5f2cbd42050309747", null ],
+    [ "pair_cdr", "scheme-private_8h.html#a1ea9aeff76e44431ed649fcc9c29b86f", null ],
+    [ "rvalue", "scheme-private_8h.html#a64342e4fe237488cb9f5ad6e61d74897", null ],
+    [ "set_car", "scheme-private_8h.html#a840a8c8020f5b693d1ef218665c6ea03", null ],
+    [ "set_cdr", "scheme-private_8h.html#a41e3c377e622453cf177de505ea7935b", null ],
+    [ "setimmutable", "scheme-private_8h.html#a08cfea81b12d7d427ee8647d5892f37d", null ],
+    [ "string_value", "scheme-private_8h.html#a257d2ba4a47267598c19a6d91198fd18", null ],
+    [ "symname", "scheme-private_8h.html#a80b1f85a69fe25c06d2da4f96f0089ca", null ],
+    [ "syntaxname", "scheme-private_8h.html#aca487f71290200278f586392bf32f9c6", null ]
+];
