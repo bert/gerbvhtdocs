@@ -4,7 +4,7 @@
 S=${WORKDIR}/${P} 
 DESCRIPTION="A free Gerber file viewer"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz" 
-HOMEPAGE="http://gerbv.sourceforge.net"
+HOMEPAGE="http://gerbv.geda-project.org"
  
 SLOT="0"
 LICENSE="GPL-2"

@@ -42,13 +42,13 @@ adding a proper header in front of your Excellon file defining the
 drills used by Eagle. You simply have to convert Eagle's drill rack file
 to a valid Excellon header and put it in front of the Excellon file generated
 by Eagle, then gerbv will know about the drill sizes. I hacked a small 
-<a href="http://gerbv.sourceforge.net/eagle/eagle2exc.pl">perl script</a>
+<a href="http://gerbv.geda-project.org/eagle/eagle2exc.pl">perl script</a>
 which just does this and is called this way: </p>
 <p> <tt> ./eagle2exc.pl &lt;Eagle </tt><i>drill rack file</i><tt>&gt;
 &lt;Eagle Excellon file&gt; &lt;new Excellon file&gt; </tt></p>
 <p>The new Excellon file contains the needed drill definition and can
 be loaded into gerbv. That's all. Good luck!</p>
-<a href="http://gerbv.sourceforge.net/">Back to gerbv's homepage</a>
+<a href="http://gerbv.geda-project.org/">Back to gerbv's homepage</a>
 <hr>
 <code> $Id$ </code>
 </body>
